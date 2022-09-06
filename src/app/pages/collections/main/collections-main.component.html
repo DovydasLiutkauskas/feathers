@@ -1,133 +1,18 @@
-<section class="category">
-  <h2 class="title">BEDS</h2>
+<section class="category" *ngFor="let collection of colletionList | keyvalue">
+  <h2 class="title">{{ collection.key }}</h2>
   <div class="category-products">
-    <div class="product">
-      <img src="/assets/images/collections/beds/beds-1.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/beds/beds-2.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/beds/beds-3.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/beds/beds-4.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-  </div>
-  <button class="btn btn-dark">SEE ALL</button>
-</section>
+    <div class="product" *ngFor="let i of [0, 1, 2, 3]">
+      <div class="img-container">
+        <img
+          [src]="collection.value.items[i].imgPath"
+          [alt]="collection.value.items[i].name"
+          class="product-img"
+        />
+        <span class="img-caption">VIEW PRODUCT</span>
+      </div>
 
-<section class="category">
-  <h2 class="title">PILLOWS</h2>
-  <div class="category-products">
-    <div class="product">
-      <img src="/assets/images/collections/pillows/pillow-1.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/pillows/pillow-2.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/pillows/pillow-3.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/pillows/pillow-4.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-  </div>
-  <button class="btn btn-dark">SEE ALL</button>
-</section>
-
-<section class="category">
-  <h2 class="title">SHEETS</h2>
-  <div class="category-products">
-    <div class="product">
-      <img src="/assets/images/collections/sheets/sheets-1.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/sheets/sheets-2.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/sheets/sheets-3.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/sheets/sheets-4.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-  </div>
-  <button class="btn btn-dark">SEE ALL</button>
-</section>
-
-<section class="category">
-  <h2 class="title">RUGS</h2>
-  <div class="category-products">
-    <div class="product">
-      <img src="/assets/images/collections/rugs/rug-1.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/rugs/rug-2.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/rugs/rug-3.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/rugs/rug-4.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-  </div>
-  <button class="btn btn-dark">SEE ALL</button>
-</section>
-
-<section class="category">
-  <h2 class="title">KIDS</h2>
-  <div class="category-products">
-    <div class="product">
-      <img src="/assets/images/collections/kids/kids-1.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/kids/kids-2.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/kids/kids-3.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/collections/kids/kids-4.png" alt="" />
-      <p class="product-name">REST couch</p>
-      <p class="product-price">$604</p>
+      <p class="product-name">{{ collection.value.items[i].name }}</p>
+      <p class="product-price">${{ collection.value.items[i].price }}</p>
     </div>
   </div>
   <button class="btn btn-dark">SEE ALL</button>

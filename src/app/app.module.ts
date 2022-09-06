@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { HeroComponent } from './pages/homepage/hero/hero.component';
-import { ShowcaseComponent } from './pages/homepage/showcase/showcase.component';
-import { CollectionPreviewComponent } from './pages/homepage/collection-preview/collection-preview.component';
-import { SaleComponent } from './pages/homepage/sale/sale.component';
-import { EmailComponent } from './pages/homepage/email/email.component';
+import { HomepageHeroComponent } from './pages/homepage/hero/hero.component';
+import { HomepageShowcaseComponent } from './pages/homepage/showcase/showcase.component';
+import { HomepageCollectionPreviewComponent } from './pages/homepage/collection-preview/collection-preview.component';
+import { HomepageSaleComponent } from './pages/homepage/sale/sale.component';
+import { HomepageEmailComponent } from './pages/homepage/email/email.component';
 import { ArrowComponent } from './core/arrow/arrow.component';
 import { CollectionsComponent } from './pages/collections/collections.component';
 import { MainComponent } from './pages/collections/main/collections-main.component';
@@ -21,11 +21,11 @@ import { MainComponent } from './pages/collections/main/collections-main.compone
     HeaderComponent,
     FooterComponent,
     HomepageComponent,
-    HeroComponent,
-    ShowcaseComponent,
-    CollectionPreviewComponent,
-    SaleComponent,
-    EmailComponent,
+    HomepageHeroComponent,
+    HomepageShowcaseComponent,
+    HomepageCollectionPreviewComponent,
+    HomepageSaleComponent,
+    HomepageEmailComponent,
     ArrowComponent,
     CollectionsComponent,
     MainComponent,

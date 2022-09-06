@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-email',
+  selector: 'app-homepage-email',
   templateUrl: './email.component.html',
-  styleUrls: ['./email.component.css']
+  styleUrls: ['./email.component.css'],
 })
-export class EmailComponent implements OnInit {
+export class HomepageEmailComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

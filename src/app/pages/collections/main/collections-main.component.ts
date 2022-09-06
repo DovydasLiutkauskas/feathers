@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { collections } from '../../../shared/data/data.storage';
 
 @Component({
   selector: 'app-collections-main',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./collections-main.component.css'],
 })
 export class MainComponent implements OnInit {
+  colletionList = collections;
+
   constructor() {}
 
   ngOnInit(): void {}
