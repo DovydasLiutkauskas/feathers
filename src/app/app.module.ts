@@ -13,7 +13,8 @@ import { HomepageSaleComponent } from './pages/homepage/sale/sale.component';
 import { HomepageEmailComponent } from './pages/homepage/email/email.component';
 import { ArrowComponent } from './core/arrow/arrow.component';
 import { CollectionsComponent } from './pages/collections/collections.component';
-import { MainComponent } from './pages/collections/main/collections-main.component';
+import { CollectionsMainComponent } from './pages/collections/main/collections-main.component';
+import { CollectionsCategoriesComponent } from './pages/collections/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MainComponent } from './pages/collections/main/collections-main.compone
     HomepageEmailComponent,
     ArrowComponent,
     CollectionsComponent,
-    MainComponent,
+    CollectionsMainComponent,
+    CollectionsCategoriesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

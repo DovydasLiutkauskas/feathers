@@ -1,0 +1,14 @@
+<section class="category-section">
+  <h2 class="title">ALL COLLECTION</h2>
+  <div class="category-products">
+    <div class="product" *ngFor="let item of currentCategoryItems | async">
+      <div class="img-container">
+        <img [src]="item.imgPath" [alt]="item.name" class="product-img" />
+        <span class="img-caption">VIEW PRODUCT</span>
+      </div>
+
+      <p class="product-name">{{ item.name }}</p>
+      <p class="product-price">${{ item.price }}</p>
+    </div>
+  </div>
+</section>

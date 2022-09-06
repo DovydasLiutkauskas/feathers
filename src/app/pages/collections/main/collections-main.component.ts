@@ -6,7 +6,7 @@ import { collections } from '../../../shared/data/data.storage';
   templateUrl: './collections-main.component.html',
   styleUrls: ['./collections-main.component.css'],
 })
-export class MainComponent implements OnInit {
+export class CollectionsMainComponent implements OnInit {
   colletionList = collections;
 
   constructor() {}

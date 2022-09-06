@@ -113,20 +113,20 @@ const kidItemList = [
   },
 ];
 
-export const collections = {
-  BEDS: {
+export const collections: { [key: string]: any } = {
+  beds: {
     items: bedItemList,
   },
-  PILLOWS: {
+  pillows: {
     items: pillowitemList,
   },
-  SHEETS: {
+  sheets: {
     items: sheetItemList,
   },
-  RUGS: {
+  rugs: {
     items: rugItemsList,
   },
-  KIDS: {
+  kids: {
     items: kidItemList,
   },
 };

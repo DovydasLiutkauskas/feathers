@@ -1,0 +1,17 @@
+.category-products {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product {
+  text-align: center;
+}
+
+.title {
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+.category-section {
+  text-align: center;
+}

@@ -1,5 +1,5 @@
 <section class="category" *ngFor="let collection of colletionList | keyvalue">
-  <h2 class="title">{{ collection.key }}</h2>
+  <h2 class="title">{{ collection.key | uppercase }}</h2>
   <div class="category-products">
     <div class="product" *ngFor="let i of [0, 1, 2, 3]">
       <div class="img-container">

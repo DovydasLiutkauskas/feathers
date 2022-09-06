@@ -3,3 +3,7 @@ export interface CollectionItem {
   price: number;
   imgPath: string;
 }
+
+export interface CategoryModel {
+  name: CollectionItem[];
+}
