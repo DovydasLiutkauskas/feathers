@@ -1,0 +1,47 @@
+.hero {
+  background: url("/assets/images/hero-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 656px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  max-width: 300px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.header > h1 {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.description > p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.description {
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  border-radius: 0;
+  padding: 8px 32px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
