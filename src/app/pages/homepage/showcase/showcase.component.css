@@ -1,0 +1,39 @@
+.showcase {
+  text-align: center;
+  margin-top: 112px;
+  margin-bottom: 112px;
+}
+
+.products {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-name {
+  font-size: 14px;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.product-img {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  margin: 0;
+}
+
+.title {
+  margin-bottom: 4rem;
+  font-size: 1.5rem;
+}
+
+.subtitle,
+.title {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
