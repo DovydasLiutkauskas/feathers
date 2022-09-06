@@ -1,0 +1,30 @@
+.collection-preview {
+  display: flex;
+}
+
+.collection-subcontainer {
+  display: flex;
+}
+
+.collection-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  padding: 20px 0;
+}
+
+.btn {
+  border-radius: 0;
+  width: fit-content;
+  padding: 8px 24px;
+  letter-spacing: 2px;
+}
