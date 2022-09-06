@@ -12,9 +12,10 @@ import { CollectionPreviewComponent } from './pages/homepage/collection-preview/
 import { SaleComponent } from './pages/homepage/sale/sale.component';
 import { EmailComponent } from './pages/homepage/email/email.component';
 import { ArrowComponent } from './core/arrow/arrow.component';
+import { CollectionsComponent } from './pages/collections/collections.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomepageComponent, HeroComponent, ShowcaseComponent, CollectionPreviewComponent, SaleComponent, EmailComponent, ArrowComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomepageComponent, HeroComponent, ShowcaseComponent, CollectionPreviewComponent, SaleComponent, EmailComponent, ArrowComponent, CollectionsComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

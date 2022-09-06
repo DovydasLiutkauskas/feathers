@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @ViewChild('dropdown') dropdownEl!: ElementRef;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     window.onclick = (e: MouseEvent) => {
@@ -22,7 +23,8 @@ export class HeaderComponent implements OnInit {
 
   shopDropdown(element: HTMLAnchorElement) {
     if (element.nextElementSibling?.classList.contains('show')) {
-      console.log('stop it');
+      this.router.navigate(['collections']);
+      element.nextElementSibling?.classList.remove('show');
     } else {
       element.nextElementSibling?.classList.add('show');
     }
