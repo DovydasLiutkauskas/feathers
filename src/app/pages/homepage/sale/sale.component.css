@@ -1,0 +1,40 @@
+.promotion {
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+}
+
+.product {
+  text-align: center;
+}
+
+.product-name {
+  margin-top: 1.5rem;
+  font-size: 14px;
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #c60134;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-right: 5rem;
+}
+
+.red {
+  color: #c60134;
+}

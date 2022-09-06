@@ -9,9 +9,10 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { HeroComponent } from './pages/homepage/hero/hero.component';
 import { ShowcaseComponent } from './pages/homepage/showcase/showcase.component';
 import { CollectionPreviewComponent } from './pages/homepage/collection-preview/collection-preview.component';
+import { SaleComponent } from './pages/homepage/sale/sale.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomepageComponent, HeroComponent, ShowcaseComponent, CollectionPreviewComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomepageComponent, HeroComponent, ShowcaseComponent, CollectionPreviewComponent, SaleComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
