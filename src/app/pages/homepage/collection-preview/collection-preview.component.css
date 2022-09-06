@@ -22,10 +22,3 @@
 .description {
   padding: 20px 0;
 }
-
-.btn {
-  border-radius: 0;
-  width: fit-content;
-  padding: 8px 24px;
-  letter-spacing: 2px;
-}

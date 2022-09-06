@@ -36,8 +36,6 @@ nav {
 }
 
 .join-btn {
-  border-radius: 0;
-  padding: 10px 25px;
   display: flex;
   align-items: center;
 }
@@ -60,6 +58,4 @@ nav {
 
 .btn-text {
   margin-right: 20px;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 2px;
 }

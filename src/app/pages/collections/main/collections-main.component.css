@@ -13,36 +13,6 @@
   font-weight: bold;
 }
 
-.btn {
-  padding: 8px 32px;
-  border-radius: 0;
-  letter-spacing: 1px;
-}
-
 .product-price {
   font-weight: bold;
-}
-
-.img-container {
-  position: relative;
-}
-
-.img-container:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.img-container:hover > .img-caption {
-  display: block;
-}
-
-.img-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 45%;
-  display: none;
-  color: black;
-  font-weight: bold;
-  font-size: 1.3rem;
 }
