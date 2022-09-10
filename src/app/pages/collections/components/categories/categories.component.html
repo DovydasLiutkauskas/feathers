@@ -1,7 +1,8 @@
+<app-promo-section></app-promo-section>
 <section class="category-section">
   <h2 class="title">ALL COLLECTION</h2>
   <div class="category-products">
-    <div class="product" *ngFor="let item of currentCategoryItems | async">
+    <div class="product" *ngFor="let item of currentCategoryItems">
       <div class="img-container">
         <img [src]="item.imgPath" [alt]="item.name" class="product-img" />
         <span class="img-caption">VIEW PRODUCT</span>

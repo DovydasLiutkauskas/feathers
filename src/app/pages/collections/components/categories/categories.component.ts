@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Route, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { CategoryModel, CollectionItem } from 'src/app/shared/data/data.model';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { CollectionItem } from 'src/app/shared/data/data.model';
 import { CategoryDataService } from './category-data.service';
 
 @Component({
@@ -10,11 +10,9 @@ import { CategoryDataService } from './category-data.service';
   styleUrls: ['./categories.component.css'],
 })
 export class CollectionsCategoriesComponent implements OnInit, OnDestroy {
-  currentCategoryItems!: Observable<CollectionItem[]>;
+  currentCategoryItems!: CollectionItem[];
 
   currentCategoryPath$$!: Subscription;
-
-  categoryName!: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,11 +21,10 @@ export class CollectionsCategoriesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.currentCategoryPath$$ = this.route.params.subscribe((url: Params) => {
-      this.categoryService.getCategoryData(url['category']);
-      this.categoryName = url['category'];
+      this.currentCategoryItems = this.categoryService.getCategoryData(
+        url['category']
+      );
     });
-
-    this.currentCategoryItems = this.categoryService.selectedCategoryData;
   }
 
   ngOnDestroy(): void {

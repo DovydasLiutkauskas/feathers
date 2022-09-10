@@ -1,0 +1,37 @@
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "text img-1 img-2"
+    "img-3 img-4 img-2";
+}
+
+.text {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.latest-1 {
+  grid-area: img-1;
+}
+
+.latest-2 {
+  grid-area: img-2;
+}
+
+.latest-3 {
+  grid-area: img-3;
+}
+
+.lastest-4 {
+  grid-area: img-4;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

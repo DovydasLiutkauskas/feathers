@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CollectionsCategoriesComponent } from './pages/collections/categories/categories.component';
+import { CollectionsCategoriesComponent } from './pages/collections/components/categories/categories.component';
 import { CollectionsComponent } from './pages/collections/collections.component';
-import { CollectionsMainComponent } from './pages/collections/main/collections-main.component';
+import { CollectionsMainComponent } from './pages/collections/components/main/collections-main.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 
 const routes: Routes = [
