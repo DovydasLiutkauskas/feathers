@@ -1,11 +1,21 @@
 <section class="header">
-  <h1>SHOP</h1>
+  <h1 [textContent]="router.url | pageName"></h1>
 </section>
 <section class="categories">
-  <a routerLink="beds">BEDS</a>
-  <a routerLink="pillows">PILLOWS</a>
-  <a routerLink="sheets">SHEETS</a>
-  <a routerLink="rugs">RUGS</a>
-  <a routerLink="kids">KIDS</a>
+  <a class="collection-link" routerLink="beds" [routerLinkActive]="'active'"
+    >BEDS</a
+  >
+  <a class="collection-link" routerLink="pillows" routerLinkActive="active"
+    >PILLOWS</a
+  >
+  <a class="collection-link" routerLink="sheets" routerLinkActive="active"
+    >SHEETS</a
+  >
+  <a class="collection-link" routerLink="rugs" routerLinkActive="active"
+    >RUGS</a
+  >
+  <a class="collection-link" routerLink="kids" routerLinkActive="active"
+    >KIDS</a
+  >
 </section>
 <router-outlet></router-outlet>

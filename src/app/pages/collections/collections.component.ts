@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { CategoryDataService } from './components/categories/category-data.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-collections',
   templateUrl: './collections.component.html',
   styleUrls: ['./collections.component.css'],
 })
-export class CollectionsComponent implements OnInit {
-  currentCollection$!: Observable<string>;
-
-  constructor(private categoryService: CategoryDataService) {}
+export class CollectionsComponent implements OnInit, OnDestroy {
+  constructor(public router: Router) {}
 
   ngOnInit(): void {}
+
+  ngOnDestroy() {}
 }

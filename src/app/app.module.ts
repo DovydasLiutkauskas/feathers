@@ -16,6 +16,7 @@ import { CollectionsComponent } from './pages/collections/collections.component'
 import { CollectionsMainComponent } from './pages/collections/components/main/collections-main.component';
 import { CollectionsCategoriesComponent } from './pages/collections/components/categories/categories.component';
 import { PromoSectionComponent } from './pages/collections/components/promo-section/promo-section/promo-section.component';
+import PageNamePipe from './pages/collections/pipes/page-name.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PromoSectionComponent } from './pages/collections/components/promo-sect
     CollectionsMainComponent,
     CollectionsCategoriesComponent,
     PromoSectionComponent,
+    PageNamePipe,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
