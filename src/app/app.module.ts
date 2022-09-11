@@ -18,6 +18,7 @@ import { CollectionsCategoriesComponent } from './pages/shop/components/categori
 import { PromoSectionComponent } from './pages/shop/components/shared/promo-section/promo-section.component';
 import PageNamePipe from './pages/shop/pipes/page-name.pipe';
 import { CategoriesListComponent } from './pages/shop/components/shared/categories-list/categories-list.component';
+import { ProductPageComponent } from './pages/shop/components/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CategoriesListComponent } from './pages/shop/components/shared/categori
     PromoSectionComponent,
     PageNamePipe,
     CategoriesListComponent,
+    ProductPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

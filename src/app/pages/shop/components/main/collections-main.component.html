@@ -3,7 +3,10 @@
   <h2 class="title">{{ collection.key | uppercase }}</h2>
   <div class="category-products">
     <div class="product" *ngFor="let i of [0, 1, 2, 3]">
-      <div class="img-container">
+      <div
+        class="img-container"
+        [routerLink]="collection.key + '/' + collection.value.items[i].name"
+      >
         <img
           [src]="collection.value.items[i].imgPath"
           [alt]="collection.value.items[i].name"

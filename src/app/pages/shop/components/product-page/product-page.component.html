@@ -1,0 +1,59 @@
+<section class="main-section">
+  <article class="left-section">
+    <img
+      class="main-img"
+      [src]="currentItem.imgPath"
+      [alt]="currentItem.name"
+    />
+    <div class="img-group">
+      <img
+        class="img-group_img"
+        [src]="currentItem.imgPath"
+        [alt]="currentItem.name"
+      />
+      <img
+        class="img-group_img"
+        [src]="currentItem.imgPath"
+        [alt]="currentItem.name"
+      />
+      <img
+        class="img-group_img"
+        [src]="currentItem.imgPath"
+        [alt]="currentItem.name"
+      />
+      <img
+        class="img-group_img"
+        [src]="currentItem.imgPath"
+        [alt]="currentItem.name"
+      />
+    </div>
+  </article>
+  <article class="right-section">
+    <div class="back-section">
+      <img
+        src="../../../../../assets//images/arrow.svg"
+        alt="go back"
+        height="12px"
+      />
+      <p>Back to previous page</p>
+    </div>
+    <div class="description">
+      <h1 class="product-title">{{ currentItem.name }}</h1>
+      <p>
+        At erat pellentesque adipiscing commodo. Ut porttitor leo a diam
+        sollicitudin tempor. Ullamcorper malesuada proin libero nunc consequat
+        interdum varius sit. Nunc sed augue lacus viverra vitae congue.
+      </p>
+      <h3 class="product-features">Special features:</h3>
+      <ul class="features-list">
+        <li class="features-list-item">Et sollicitudin ac orci</li>
+        <li class="features-list-item">Et sollicitudin ac orci</li>
+        <li class="features-list-item">Et sollicitudin ac orci</li>
+      </ul>
+    </div>
+    <div class="button-section">
+      <span class="price">${{ currentItem.price }}</span>
+      <button class="btn btn-dark">ADD TO CART</button>
+    </div>
+  </article>
+</section>
