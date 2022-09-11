@@ -12,11 +12,12 @@ import { HomepageCollectionPreviewComponent } from './pages/homepage/collection-
 import { HomepageSaleComponent } from './pages/homepage/sale/sale.component';
 import { HomepageEmailComponent } from './pages/homepage/email/email.component';
 import { ArrowComponent } from './core/arrow/arrow.component';
-import { CollectionsComponent } from './pages/collections/collections.component';
-import { CollectionsMainComponent } from './pages/collections/components/main/collections-main.component';
-import { CollectionsCategoriesComponent } from './pages/collections/components/categories/categories.component';
-import { PromoSectionComponent } from './pages/collections/components/promo-section/promo-section/promo-section.component';
-import PageNamePipe from './pages/collections/pipes/page-name.pipe';
+import { ShopComponent } from './pages/shop/shop.component';
+import { CollectionsMainComponent } from './pages/shop/components/main/collections-main.component';
+import { CollectionsCategoriesComponent } from './pages/shop/components/categories/categories.component';
+import { PromoSectionComponent } from './pages/shop/components/shared/promo-section/promo-section.component';
+import PageNamePipe from './pages/shop/pipes/page-name.pipe';
+import { CategoriesListComponent } from './pages/shop/components/shared/categories-list/categories-list.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +31,12 @@ import PageNamePipe from './pages/collections/pipes/page-name.pipe';
     HomepageSaleComponent,
     HomepageEmailComponent,
     ArrowComponent,
-    CollectionsComponent,
+    ShopComponent,
     CollectionsMainComponent,
     CollectionsCategoriesComponent,
     PromoSectionComponent,
     PageNamePipe,
+    CategoriesListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

@@ -2,11 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-collections',
-  templateUrl: './collections.component.html',
-  styleUrls: ['./collections.component.css'],
+  selector: 'app-shop',
+  templateUrl: './shop.component.html',
+  styleUrls: ['./shop.component.css'],
 })
-export class CollectionsComponent implements OnInit, OnDestroy {
+export class ShopComponent implements OnInit, OnDestroy {
   constructor(public router: Router) {}
 
   ngOnInit(): void {}

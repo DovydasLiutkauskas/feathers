@@ -1,8 +1,5 @@
-<section class="header">
-  <h1 [textContent]="router.url | pageName"></h1>
-</section>
 <section class="categories">
-  <a class="collection-link" routerLink="beds" [routerLinkActive]="'active'"
+  <a class="collection-link" routerLink="beds" routerLinkActive="'active'"
     >BEDS</a
   >
   <a class="collection-link" routerLink="pillows" routerLinkActive="active"
@@ -18,4 +15,3 @@
     >KIDS</a
   >
 </section>
-<router-outlet></router-outlet>
