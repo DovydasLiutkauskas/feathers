@@ -21,6 +21,7 @@ import { CategoriesListComponent } from './pages/shop/components/shared/categori
 import { ProductPageComponent } from './pages/shop/components/product-page/product-page.component';
 import { ProductInfoSectionComponent } from './pages/shop/components/product-page/product-info-section/product-info-section.component';
 import { RelatedProductsComponent } from './pages/shop/components/product-page/related-products/related-products.component';
+import { AddToCartModalComponent } from './pages/shop/components/product-page/addToCart-modal/add-to-cart-modal.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { RelatedProductsComponent } from './pages/shop/components/product-page/r
     ProductPageComponent,
     ProductInfoSectionComponent,
     RelatedProductsComponent,
+    AddToCartModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

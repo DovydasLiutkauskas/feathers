@@ -1,3 +1,7 @@
+<app-add-to-cart-modal
+  *ngIf="showModal$ | async"
+  [currentItem]="currentItem"
+></app-add-to-cart-modal>
 <div class="main">
   <section class="main-section">
     <article class="left-section">
@@ -56,7 +60,9 @@
       </div>
       <div class="button-section">
         <span class="price">${{ currentItem.price }}</span>
-        <button class="btn btn-dark">ADD TO CART</button>
+        <button class="btn btn-dark" (click)="onAddToCart()">
+          ADD TO CART
+        </button>
       </div>
     </article>
   </section>

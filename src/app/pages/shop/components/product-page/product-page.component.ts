@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
 import { ProductPageService } from '../../services/product-page.service';
 
@@ -13,6 +13,7 @@ import { ProductPageService } from '../../services/product-page.service';
 export class ProductPageComponent implements OnInit, OnDestroy {
   currentItem$$!: Subscription;
   currentItem!: CollectionItem;
+  showModal$!: Observable<boolean>;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +22,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.showModal$ = this.productService.showModal$;
+
     this.currentItem$$ = this.route.params.subscribe((params: Params) => {
       this.currentItem = this.productService.getItem(
         params['category'],
@@ -31,6 +34,10 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   goBack() {
     this.location.back();
+  }
+
+  onAddToCart() {
+    this.productService.openModal();
   }
 
   ngOnDestroy() {
