@@ -6,6 +6,7 @@
 /* STYLES FOR IMAGE CAPTION HOVERING EFFECT */
 .img-container {
   position: relative;
+  text-align: center;
 }
 
 .img-caption {
@@ -26,6 +27,11 @@
 
 .img-container:hover > .img-caption {
   display: block;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
 }
 
 /* STYLES FOR BUTTON */

@@ -1,0 +1,30 @@
+h3 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.related-products {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.related-product {
+  width: 30%;
+}
+
+.product-info {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.product-info > p {
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.product-price {
+  font-weight: bold;
+}

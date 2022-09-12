@@ -20,6 +20,7 @@ import PageNamePipe from './pages/shop/pipes/page-name.pipe';
 import { CategoriesListComponent } from './pages/shop/components/shared/categories-list/categories-list.component';
 import { ProductPageComponent } from './pages/shop/components/product-page/product-page.component';
 import { ProductInfoSectionComponent } from './pages/shop/components/product-page/product-info-section/product-info-section.component';
+import { RelatedProductsComponent } from './pages/shop/components/product-page/related-products/related-products.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ProductInfoSectionComponent } from './pages/shop/components/product-pag
     CategoriesListComponent,
     ProductPageComponent,
     ProductInfoSectionComponent,
+    RelatedProductsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

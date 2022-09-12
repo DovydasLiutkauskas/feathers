@@ -1,6 +1,7 @@
 .product-info {
   display: flex;
   letter-spacing: 2px;
+  margin-bottom: 150px;
 }
 
 .titles {
@@ -26,4 +27,9 @@
 .active {
   color: black;
   text-decoration: underline;
+}
+
+.text {
+  font-size: 1rem;
+  color: #505050;
 }

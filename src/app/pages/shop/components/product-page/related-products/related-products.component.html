@@ -1,0 +1,13 @@
+<h3>RELATED PRODUCTS</h3>
+<section class="related-products">
+  <article class="related-product" *ngFor="let item of relatedProducts">
+    <div class="img-container" [routerLink]="['../', item.name]">
+      <img [src]="item.imgPath" [alt]="item.name" class="product-img" />
+      <span class="img-caption">VIEW PRODUCT</span>
+    </div>
+    <div class="product-info">
+      <p class="product-name">{{ item.name }}</p>
+      <p class="product-price">${{ item.price }}</p>
+    </div>
+  </article>
+</section>
