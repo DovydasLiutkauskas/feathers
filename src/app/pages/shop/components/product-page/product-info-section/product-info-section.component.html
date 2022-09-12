@@ -1,0 +1,45 @@
+<section class="product-info">
+  <article class="titles">
+    <h4
+      class="section-name"
+      (click)="onClick($event)"
+      [ngClass]="{ active: currentSection === 'DESCRIPTION' }"
+    >
+      DESCRIPTION
+    </h4>
+    <h4
+      class="section-name"
+      (click)="onClick($event)"
+      [ngClass]="{ active: currentSection === 'ADDITIONAL INFORMATION' }"
+    >
+      ADDITIONAL INFORMATION
+    </h4>
+    <h4
+      class="section-name"
+      (click)="onClick($event)"
+      [ngClass]="{ active: currentSection === 'MATERIAL' }"
+    >
+      MATERIAL
+    </h4>
+  </article>
+  <article class="text-section">
+    <p class="text" *ngIf="currentSection === 'DESCRIPTION'">
+      <b> SOME DESCRIPTION BLABLABLABLABLALBABA</b> Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Deserunt ut quibusdam enim fugit natus
+      cumque soluta nobis omnis animi suscipit? Soluta harum dolorum explicabo
+      laudantium sequi qui nesciunt, velit voluptate!
+    </p>
+    <p class="text" *ngIf="currentSection === 'ADDITIONAL INFORMATION'">
+      <b>SOME ADDITIONAL INFORMATION BLABLABLABLABLABA</b> Lorem ipsum dolor sit
+      amet consectetur adipisicing elit. Deserunt ut quibusdam enim fugit natus
+      cumque soluta nobis omnis animi suscipit? Soluta harum dolorum explicabo
+      laudantium sequi qui nesciunt, velit voluptate!
+    </p>
+    <p class="text" *ngIf="currentSection === 'MATERIAL'">
+      <b>SOME MATERIAL BALBALBALBLALB </b> Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Deserunt ut quibusdam enim fugit natus
+      cumque soluta nobis omnis animi suscipit? Soluta harum dolorum explicabo
+      laudantium sequi qui nesciunt, velit voluptate!
+    </p>
+  </article>
+</section>

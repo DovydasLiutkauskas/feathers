@@ -1,0 +1,29 @@
+.product-info {
+  display: flex;
+  letter-spacing: 2px;
+}
+
+.titles {
+  width: 40%;
+}
+
+.text-section {
+  width: 60%;
+}
+
+.section-name {
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #505050;
+}
+
+.section-name:hover {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.active {
+  color: black;
+  text-decoration: underline;
+}

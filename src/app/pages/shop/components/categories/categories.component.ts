@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
-import { CategoryDataService } from './category-data.service';
+import { CategoryDataService } from '../../services/category-data.service';
 
 @Component({
   selector: 'app-categories',

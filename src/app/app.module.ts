@@ -19,6 +19,7 @@ import { PromoSectionComponent } from './pages/shop/components/shared/promo-sect
 import PageNamePipe from './pages/shop/pipes/page-name.pipe';
 import { CategoriesListComponent } from './pages/shop/components/shared/categories-list/categories-list.component';
 import { ProductPageComponent } from './pages/shop/components/product-page/product-page.component';
+import { ProductInfoSectionComponent } from './pages/shop/components/product-page/product-info-section/product-info-section.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ProductPageComponent } from './pages/shop/components/product-page/produ
     PageNamePipe,
     CategoriesListComponent,
     ProductPageComponent,
+    ProductInfoSectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

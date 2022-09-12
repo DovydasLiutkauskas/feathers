@@ -1,7 +1,11 @@
-.main-section {
+.main {
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.main-section {
   display: flex;
+  margin-bottom: 100px;
 }
 
 .left-section {
@@ -75,4 +79,12 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-right: 5rem;
+}
+
+.arrow-back {
+  cursor: pointer;
+}
+
+.arrow-back:hover {
+  height: 20px;
 }

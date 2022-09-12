@@ -10,7 +10,7 @@ export class ProductPageService {
 
   getItem(category: string, name: string) {
     return collections[category].items.find(
-      (item: CollectionItem) => (item.name = name)
+      (item: CollectionItem) => item.name === name
     );
   }
 }

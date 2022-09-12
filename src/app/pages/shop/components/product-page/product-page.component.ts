@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -15,7 +16,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductPageService
+    private productService: ProductPageService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +27,10 @@ export class ProductPageComponent implements OnInit, OnDestroy {
         params['id']
       );
     });
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   ngOnDestroy() {
