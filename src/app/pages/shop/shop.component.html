@@ -1,5 +1,6 @@
-<section class="header">
+<section class="header" [ngClass]="pageBackground">
   <h1 [textContent]="router.url | pageName"></h1>
 </section>
 <app-categories-list></app-categories-list>
+<app-breadcrumbs></app-breadcrumbs>
 <router-outlet></router-outlet>

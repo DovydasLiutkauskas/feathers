@@ -1,0 +1,32 @@
+.breadcrumbs {
+  padding-left: 100px;
+  padding-bottom: 50px;
+}
+
+.item {
+  color: #505050;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.item:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.breadcrumb-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.seperator {
+  padding-right: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.active {
+  color: black;
+}

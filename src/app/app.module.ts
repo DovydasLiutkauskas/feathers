@@ -22,6 +22,7 @@ import { ProductPageComponent } from './pages/shop/components/product-page/produ
 import { ProductInfoSectionComponent } from './pages/shop/components/product-page/product-info-section/product-info-section.component';
 import { RelatedProductsComponent } from './pages/shop/components/product-page/related-products/related-products.component';
 import { AddToCartModalComponent } from './pages/shop/components/product-page/addToCart-modal/add-to-cart-modal.component';
+import { BreadcrumbsComponent } from './pages/shop/components/shared/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AddToCartModalComponent } from './pages/shop/components/product-page/ad
     ProductInfoSectionComponent,
     RelatedProductsComponent,
     AddToCartModalComponent,
+    BreadcrumbsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
 import { collections } from 'src/app/shared/data/data.storage';
 
@@ -12,6 +12,8 @@ export class ProductPageService {
   currentProductName!: string;
 
   showModal$ = new BehaviorSubject(false);
+
+  backgroundImage$ = new BehaviorSubject('main');
 
   constructor() {}
 
@@ -35,5 +37,9 @@ export class ProductPageService {
 
   closeModal() {
     this.showModal$.next(false);
+  }
+
+  changeBackgroundImage(name: string) {
+    this.backgroundImage$.next(name);
   }
 }

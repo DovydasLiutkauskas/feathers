@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ProductPageService } from './services/product-page.service';
 
 @Component({
   selector: 'app-shop',
@@ -7,9 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit, OnDestroy {
-  constructor(public router: Router) {}
+  pageBackground!: string;
 
-  ngOnInit(): void {}
+  pageBackground$$!: Subscription;
 
-  ngOnDestroy() {}
+  constructor(
+    public router: Router,
+    private productServce: ProductPageService
+  ) {}
+
+  ngOnInit(): void {
+    this.pageBackground$$ = this.productServce.backgroundImage$.subscribe(
+      (page: string) => (this.pageBackground = page)
+    );
+  }
+
+  ngOnDestroy() {
+    this.pageBackground$$.unsubscribe();
+  }
 }

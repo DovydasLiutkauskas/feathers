@@ -1,13 +1,19 @@
-.addToCart-modal {
+.modal-background {
+  background-color: rgb(0, 0, 0, 0.3);
+  z-index: 1;
   height: 100vh;
   width: 100vw;
   position: fixed;
-  z-index: 1;
-  background-color: rgb(0, 0, 0, 0.3);
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.addToCart-modal {
+  z-index: 2;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
 }
 
 .modal-window {

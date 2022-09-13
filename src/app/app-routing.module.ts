@@ -13,7 +13,11 @@ const routes: Routes = [
     path: 'collections',
     component: ShopComponent,
     children: [
-      { path: '', pathMatch: 'full', component: CollectionsMainComponent },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: CollectionsMainComponent,
+      },
       {
         path: ':category',
         component: CollectionsCategoriesComponent,

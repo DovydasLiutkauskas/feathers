@@ -1,0 +1,10 @@
+<section class="breadcrumbs">
+  <ul class="breadcrumb-list">
+    <li *ngFor="let route of currentRoute; let i = index">
+      <a class="item" [ngClass]="{ active: i === currentRoute.length - 1 }"
+        >{{ route | uppercase }}
+      </a>
+      <span *ngIf="i !== currentRoute.length - 1" class="seperator">/ </span>
+    </li>
+  </ul>
+</section>

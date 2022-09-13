@@ -15,18 +15,10 @@ export class AddToCartModalComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.checkPressedKey = this.checkPressedKey.bind(this);
     window.addEventListener('keydown', this.checkPressedKey);
-
-    this.checkClickedElement = this.checkClickedElement.bind(this);
-    window.addEventListener('click', this.checkClickedElement);
   }
 
   checkPressedKey(e: KeyboardEvent): void {
     if (e.key === 'Escape') this.closeModal();
-  }
-
-  checkClickedElement(e: any) {
-    console.log(e);
-    if (e.target.classList.value === 'addToCart-modal') this.closeModal();
   }
 
   closeModal() {
@@ -36,6 +28,5 @@ export class AddToCartModalComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     window.removeAllListeners;
     window.removeEventListener('keydown', this.checkPressedKey);
-    window.removeEventListener('click', this.checkClickedElement);
   }
 }

@@ -1,5 +1,4 @@
 .header {
-  background-image: url(/assets/images/collections/collections-header.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,6 +6,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main {
+  background-image: url(/assets/images/collections/collections-header.png);
+}
+
+.product-page {
+  background-image: url(/assets/images/product-detail-background.png);
 }
 
 .header > h1 {

@@ -30,6 +30,10 @@ export class ProductPageComponent implements OnInit, OnDestroy {
         params['id']
       );
     });
+
+    setTimeout(() => {
+      this.productService.changeBackgroundImage('product-page');
+    }, 0);
   }
 
   goBack() {
@@ -42,5 +46,6 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.currentItem$$.unsubscribe();
+    this.productService.changeBackgroundImage('main');
   }
 }
