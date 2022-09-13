@@ -2,5 +2,5 @@
   <h1 [textContent]="router.url | pageName"></h1>
 </section>
 <app-categories-list></app-categories-list>
-<app-breadcrumbs></app-breadcrumbs>
+<app-breadcrumbs *ngIf="(router.url | pageName) !== 'CART'"></app-breadcrumbs>
 <router-outlet></router-outlet>

@@ -5,6 +5,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { CollectionsMainComponent } from './pages/shop/components/main/collections-main.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProductPageComponent } from './pages/shop/components/product-page/product-page.component';
+import { CartComponent } from './pages/shop/components/cart/cart.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -17,6 +18,10 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         component: CollectionsMainComponent,
+      },
+      {
+        path: 'cart',
+        component: CartComponent,
       },
       {
         path: ':category',

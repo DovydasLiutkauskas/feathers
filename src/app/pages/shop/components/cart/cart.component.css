@@ -1,0 +1,99 @@
+.cart-main {
+  padding: 50px 100px;
+  display: flex;
+  letter-spacing: 2px;
+  justify-content: space-between;
+}
+
+.cart-left {
+  width: 55%;
+}
+
+.cart-right {
+  width: 400px;
+  border: 1px solid black;
+}
+
+.product-overview {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product-description {
+  width: 60%;
+}
+
+.title-container {
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.product-img {
+  height: 220px;
+  width: auto;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 14px;
+  color: #505050;
+}
+
+.product-price {
+  font-weight: bold;
+}
+
+.delete-icon {
+  padding-right: 1rem;
+}
+
+.btn-shop {
+  margin-top: 2rem;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.price-name,
+.price {
+  font-size: 20px;
+  color: #505050;
+  font-weight: 600;
+}
+
+.bottom-border {
+  border-bottom: 0.5px solid #505050;
+}
+
+.table-bottom {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.btn-buy {
+  padding: 0.5rem 4rem !important;
+  margin-bottom: 1rem;
+}
+
+.discount {
+  font-weight: bold;
+  color: #505050;
+  font-size: 20px;
+}

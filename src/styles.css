@@ -3,6 +3,9 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: auto !important;
+}
 /* STYLES FOR IMAGE CAPTION HOVERING EFFECT */
 .img-container {
   position: relative;
