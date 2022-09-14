@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UserService } from 'src/app/shared/services/user-cart.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,9 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   @ViewChild('dropdown') dropdownEl!: ElementRef;
 
-  constructor(private router: Router) {}
+  cartQuantity$!: Observable<number | null>;
+
+  constructor(private router: Router, private userSerivce: UserService) {}
 
   ngOnInit(): void {
     window.onclick = (e: MouseEvent) => {
@@ -19,6 +23,8 @@ export class HeaderComponent implements OnInit {
         );
       }
     };
+
+    this.cartQuantity$ = this.userSerivce.updatedQuantity$;
   }
 
   shopDropdown(element: HTMLAnchorElement) {

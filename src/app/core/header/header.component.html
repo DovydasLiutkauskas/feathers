@@ -72,6 +72,9 @@
           >
             <span class="btn-text">CART</span>
             <img src="./assets/images/cart.svg" alt="Shopping cart" />
+            <span class="cart-qty" *ngIf="cartQuantity$ | async">{{
+              cartQuantity$ | async
+            }}</span>
           </button>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription, Observable } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
+import { UserService } from 'src/app/shared/services/user-cart.service';
 import { ProductPageService } from '../../services/product-page.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductPageService,
-    private location: Location
+    private location: Location,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +43,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   }
 
   onAddToCart() {
+    this.userService.addItemToCart(this.currentItem, 1);
+
     this.productService.openModal();
   }
 

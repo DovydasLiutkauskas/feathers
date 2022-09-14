@@ -16,6 +16,7 @@
 .cart-right {
   width: 400px;
   border: 1px solid black;
+  height: fit-content;
 }
 
 .product-overview {
@@ -107,4 +108,15 @@
   cursor: pointer;
   filter: invert(16%) sepia(84%) saturate(4401%) hue-rotate(358deg)
     brightness(95%) contrast(126%);
+}
+
+.cart-empty {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.empty-cart-icon {
+  width: 100px;
+  height: auto;
+  padding: 3rem 0;
 }
