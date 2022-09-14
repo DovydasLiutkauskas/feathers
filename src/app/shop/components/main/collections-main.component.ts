@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { collections } from '../../../../shared/data/data.storage';
+import { collections } from '../../../shared/data/data.storage';
 
 @Component({
   selector: 'app-collections-main',

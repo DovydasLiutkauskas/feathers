@@ -12,18 +12,18 @@ import { HomepageCollectionPreviewComponent } from './pages/homepage/collection-
 import { HomepageSaleComponent } from './pages/homepage/sale/sale.component';
 import { HomepageEmailComponent } from './pages/homepage/email/email.component';
 import { ArrowComponent } from './core/arrow/arrow.component';
-import { ShopComponent } from './pages/shop/shop.component';
-import { CollectionsMainComponent } from './pages/shop/components/main/collections-main.component';
-import { CollectionsCategoriesComponent } from './pages/shop/components/categories/categories.component';
-import { PromoSectionComponent } from './pages/shop/components/shared/promo-section/promo-section.component';
-import PageNamePipe from './pages/shop/pipes/page-name.pipe';
-import { CategoriesListComponent } from './pages/shop/components/shared/categories-list/categories-list.component';
-import { ProductPageComponent } from './pages/shop/components/product-page/product-page.component';
-import { ProductInfoSectionComponent } from './pages/shop/components/product-page/product-info-section/product-info-section.component';
-import { RelatedProductsComponent } from './pages/shop/components/product-page/related-products/related-products.component';
-import { AddToCartModalComponent } from './pages/shop/components/product-page/addToCart-modal/add-to-cart-modal.component';
-import { BreadcrumbsComponent } from './pages/shop/components/shared/breadcrumbs/breadcrumbs.component';
-import { CartComponent } from './pages/shop/components/cart/cart.component';
+import { ShopComponent } from './shop/shop.component';
+import { CollectionsMainComponent } from './shop/components/main/collections-main.component';
+import { CollectionsCategoriesComponent } from './shop/components/categories/categories.component';
+import { PromoSectionComponent } from './shop/components/shared/promo-section/promo-section.component';
+import PageNamePipe from './shop/pipes/page-name.pipe';
+import { CategoriesListComponent } from './shop/components/shared/categories-list/categories-list.component';
+import { ProductPageComponent } from './shop/components/product-page/product-page.component';
+import { ProductInfoSectionComponent } from './shop/components/product-page/product-info-section/product-info-section.component';
+import { RelatedProductsComponent } from './shop/components/product-page/related-products/related-products.component';
+import { AddToCartModalComponent } from './shop/components/product-page/addToCart-modal/add-to-cart-modal.component';
+import { BreadcrumbsComponent } from './shop/components/shared/breadcrumbs/breadcrumbs.component';
+import { CartComponent } from './shop/components/cart/cart.component';
 
 @NgModule({
   declarations: [

@@ -20,7 +20,7 @@ export class ShopComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.pageBackground$$ = this.productServce.backgroundImage$.subscribe(
-      (page: string) => (this.pageBackground = page)
+      (pageName: string) => (this.pageBackground = pageName)
     );
   }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
 import { collections } from 'src/app/shared/data/data.storage';
 

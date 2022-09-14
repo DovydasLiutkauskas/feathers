@@ -1,8 +1,12 @@
-.cart-main {
+.cart-container {
   padding: 50px 100px;
+}
+
+.cart-main {
   display: flex;
   letter-spacing: 2px;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .cart-left {
@@ -80,6 +84,7 @@
 
 .bottom-border {
   border-bottom: 0.5px solid #505050;
+  border-spacing: 1px;
 }
 
 .table-bottom {
@@ -96,4 +101,10 @@
   font-weight: bold;
   color: #505050;
   font-size: 20px;
+}
+
+.delete-icon:hover > img {
+  cursor: pointer;
+  filter: invert(16%) sepia(84%) saturate(4401%) hue-rotate(358deg)
+    brightness(95%) contrast(126%);
 }

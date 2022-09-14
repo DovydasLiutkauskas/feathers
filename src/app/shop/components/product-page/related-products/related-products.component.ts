@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
 import { ProductPageService } from '../../../services/product-page.service';
@@ -9,6 +9,8 @@ import { ProductPageService } from '../../../services/product-page.service';
   styleUrls: ['./related-products.component.css'],
 })
 export class RelatedProductsComponent implements OnInit, OnDestroy {
+  @Input() cartRelatedProducts!: CollectionItem[];
+
   relatedProducts!: CollectionItem[];
 
   relatedProducts$$!: Subscription;
