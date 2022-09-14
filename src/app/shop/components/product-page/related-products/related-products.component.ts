@@ -8,27 +8,12 @@ import { ProductPageService } from '../../../services/product-page.service';
   templateUrl: './related-products.component.html',
   styleUrls: ['./related-products.component.css'],
 })
-export class RelatedProductsComponent implements OnInit, OnDestroy {
-  @Input() cartRelatedProducts!: CollectionItem[];
-
-  relatedProducts!: CollectionItem[];
-
-  relatedProducts$$!: Subscription;
+export class RelatedProductsComponent implements OnInit {
+  relatedProducts$!: Observable<CollectionItem[]>;
 
   constructor(private productService: ProductPageService) {}
 
   ngOnInit(): void {
-    this.relatedProducts = this.productService.getRelatedItems();
-
-    this.relatedProducts$$ = this.productService.relatedItems$.subscribe(
-      (items: CollectionItem[]) =>
-        setTimeout(() => {
-          this.relatedProducts = items;
-        }, 500)
-    );
-  }
-
-  ngOnDestroy() {
-    this.relatedProducts$$.unsubscribe();
+    this.relatedProducts$ = this.productService.relatedItems$;
   }
 }

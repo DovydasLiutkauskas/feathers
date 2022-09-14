@@ -3,6 +3,7 @@ export interface CollectionItem {
   price: number;
   imgPath: string;
   id: number;
+  category: string;
   quantity?: number;
 }
 

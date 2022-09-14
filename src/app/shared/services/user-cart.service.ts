@@ -28,9 +28,9 @@ export class UserService {
       this.itemsInCart[itemExist].quantity += qty;
     } else {
       this.itemsInCart.push({ item, quantity: qty });
-      localStorage.setItem('cart', JSON.stringify(this.itemsInCart));
     }
 
+    localStorage.setItem('cart', JSON.stringify(this.itemsInCart));
     this.updateQuantityInCart();
   }
 

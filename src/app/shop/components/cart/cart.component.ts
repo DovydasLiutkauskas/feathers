@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, DoCheck, OnChanges, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartItem } from 'src/app/shared/data/data.model';
 import { UserService } from 'src/app/shared/services/user-cart.service';
@@ -10,13 +10,10 @@ import { ProductPageService } from '../../services/product-page.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
   currentCartItems!: CartItem[];
-
   updateItemsInCart$$!: Subscription;
-
   deliveryPrice = 30;
-
   productPriceTotal!: number;
 
   constructor(
@@ -40,12 +37,19 @@ export class CartComponent implements OnInit {
         this.totalProductPrice();
       }
     );
+
+    if (this.currentCartItems.length) {
+      this.productService.updateRelatedItems(
+        this.currentCartItems[0].item.category,
+        this.currentCartItems[0].item.name
+      );
+    }
   }
 
   totalProductPrice() {
     const totalPrice = this.currentCartItems.reduce(
       (prevValue: number, currValue: CartItem) => {
-        return prevValue + currValue.item.price;
+        return prevValue + currValue.item.price * currValue.quantity;
       },
       0
     );
@@ -59,5 +63,9 @@ export class CartComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  ngOnDestroy() {
+    this.updateItemsInCart$$.unsubscribe();
   }
 }

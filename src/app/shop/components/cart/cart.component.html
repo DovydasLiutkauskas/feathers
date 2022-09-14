@@ -9,6 +9,12 @@
           class="product-img"
           [src]="cartItem.item.imgPath"
           [alt]="cartItem.item.name"
+          [routerLink]="[
+            '/',
+            'collections',
+            cartItem.item.category,
+            cartItem.item.name
+          ]"
         />
         <div class="product-info">
           <div class="product-description">
@@ -50,7 +56,7 @@
       </div>
     </article>
   </section>
-  <!-- <app-related-products></app-related-products> -->
+  <app-related-products></app-related-products>
 </div>
 <div *ngIf="!currentCartItems.length" class="cart-empty">
   <h2>Your cart is empty...</h2>

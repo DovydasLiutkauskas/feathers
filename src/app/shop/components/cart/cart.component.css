@@ -48,6 +48,10 @@
   padding: 1rem;
 }
 
+.product-img:hover {
+  cursor: pointer;
+}
+
 .title {
   font-size: 1.5rem;
   font-weight: bold;
