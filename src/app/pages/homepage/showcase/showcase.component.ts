@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CollectionItem } from 'src/app/shared/data/data.model';
+import { RandomProductsService } from '../services/random-products.service';
 
 @Component({
   selector: 'app-homepage-showcase',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./showcase.component.css'],
 })
 export class HomepageShowcaseComponent implements OnInit {
-  constructor() {}
+  randomItems!: CollectionItem[];
 
-  ngOnInit(): void {}
+  constructor(private randomProducts: RandomProductsService) {}
+
+  ngOnInit(): void {
+    this.randomItems = this.randomProducts.getRandomItems();
+  }
 }
