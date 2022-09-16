@@ -5,7 +5,10 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { CartItem } from 'src/app/shared/data/data.model';
+import { CartService } from 'src/app/shared/services/user-cart.service';
 
 @Component({
   selector: 'app-cart-popup',
@@ -33,10 +36,31 @@ import { Component, Input, OnInit } from '@angular/core';
     ]),
   ],
 })
-export class CartPopupComponent implements OnInit {
+export class CartPopupComponent implements OnInit, OnDestroy {
   @Input() state!: string;
 
-  constructor() {}
+  itemsInCart: CartItem[] = [];
+  itemsInCart$$: Subscription | undefined;
 
-  ngOnInit(): void {}
+  totalItemsPrice$!: Observable<number>;
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit(): void {
+    this.itemsInCart = this.cartService.getItemsInCart();
+
+    this.itemsInCart$$ = this.cartService.updatedItemsInCart$.subscribe(
+      (updatedItems: CartItem[]) => (this.itemsInCart = updatedItems)
+    );
+
+    this.totalItemsPrice$ = this.cartService.totalCartSum$;
+  }
+
+  onItemDelete(id: number) {
+    this.cartService.deleteItemInCart(id);
+  }
+
+  ngOnDestroy(): void {
+    this.itemsInCart$$?.unsubscribe();
+  }
 }

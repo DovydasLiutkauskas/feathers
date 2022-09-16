@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserService } from 'src/app/shared/services/user-cart.service';
+import { CartService } from 'src/app/shared/services/user-cart.service';
 
 @Component({
   selector: 'app-header',
@@ -15,10 +15,10 @@ export class HeaderComponent implements OnInit {
 
   cartQuantity$!: Observable<number | null>;
 
-  constructor(private router: Router, private userSerivce: UserService) {}
+  constructor(private router: Router, private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartQuantity$ = this.userSerivce.updatedQuantity$;
+    this.cartQuantity$ = this.cartService.updatedQuantity$;
   }
 
   shopDropdown(element: HTMLAnchorElement) {

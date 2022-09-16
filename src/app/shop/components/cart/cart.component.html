@@ -39,7 +39,7 @@
     <article class="cart-right">
       <div class="price-container">
         <p class="price-name">Price:</p>
-        <p class="price">${{ productPriceTotal }}</p>
+        <p class="price">${{ productPriceTotal$ | async }}</p>
       </div>
       <div class="price-container">
         <p class="price-name">Delivery:</p>
@@ -47,7 +47,9 @@
       </div>
       <div class="price-container bottom-border">
         <p class="price-name">Total:</p>
-        <p class="price">${{ productPriceTotal + deliveryPrice }}</p>
+        <p class="price">
+          ${{ (productPriceTotal$ | async)! + deliveryPrice }}
+        </p>
       </div>
       <div class="table-bottom">
         <p class="discount">Have a discount?</p>

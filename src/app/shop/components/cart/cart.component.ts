@@ -1,8 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { CartItem } from 'src/app/shared/data/data.model';
-import { UserService } from 'src/app/shared/services/user-cart.service';
+import { CartService } from 'src/app/shared/services/user-cart.service';
 import { ProductPageService } from '../../services/product-page.service';
 
 @Component({
@@ -13,12 +13,12 @@ import { ProductPageService } from '../../services/product-page.service';
 export class CartComponent implements OnInit, OnDestroy {
   currentCartItems!: CartItem[];
   updateItemsInCart$$!: Subscription;
+  productPriceTotal$!: Observable<number>;
   deliveryPrice = 30;
-  productPriceTotal!: number;
 
   constructor(
     private productService: ProductPageService,
-    private userService: UserService,
+    private cartService: CartService,
     private location: Location
   ) {}
 
@@ -27,14 +27,13 @@ export class CartComponent implements OnInit, OnDestroy {
       this.productService.changeBackgroundImage('cart');
     }, 0);
 
-    this.currentCartItems = this.userService.getItemsInCart();
+    this.currentCartItems = this.cartService.getItemsInCart();
 
-    this.totalProductPrice();
+    this.productPriceTotal$ = this.cartService.totalCartSum$;
 
-    this.updateItemsInCart$$ = this.userService.updatedItemsInCart$.subscribe(
+    this.updateItemsInCart$$ = this.cartService.updatedItemsInCart$.subscribe(
       (updatedItem: CartItem[]) => {
         this.currentCartItems = updatedItem;
-        this.totalProductPrice();
       }
     );
 
@@ -46,19 +45,8 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   }
 
-  totalProductPrice() {
-    const totalPrice = this.currentCartItems.reduce(
-      (prevValue: number, currValue: CartItem) => {
-        return prevValue + currValue.item.price * currValue.quantity;
-      },
-      0
-    );
-
-    this.productPriceTotal = totalPrice;
-  }
-
   deleteItem(id: number) {
-    this.userService.deleteItemInCart(id);
+    this.cartService.deleteItemInCart(id);
   }
 
   goBack() {

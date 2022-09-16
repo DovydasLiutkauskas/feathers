@@ -4,12 +4,15 @@
   width: 312px;
   right: 0;
   top: -100px;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.5);
+  border-radius: 6px;
 }
 
 .cart-upper {
   display: flex;
   padding: 0.5rem;
   border-bottom: 0.5px solid black;
+  position: relative;
 }
 
 .cart-down {
@@ -29,6 +32,10 @@
   object-position: center;
   object-fit: cover;
   margin-right: 1rem;
+}
+
+.product-img:hover {
+  cursor: pointer;
 }
 
 .btn-container {
@@ -62,4 +69,9 @@
   cursor: pointer;
   filter: invert(16%) sepia(84%) saturate(4401%) hue-rotate(358deg)
     brightness(95%) contrast(126%);
+}
+
+.emtpy-cart {
+  padding: 1rem;
+  text-align: center;
 }

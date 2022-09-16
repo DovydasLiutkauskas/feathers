@@ -1,6 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CollectionItem } from 'src/app/shared/data/data.model';
-import { UserService } from 'src/app/shared/services/user-cart.service';
 import { ProductPageService } from '../../../services/product-page.service';
 
 @Component({

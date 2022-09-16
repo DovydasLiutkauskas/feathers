@@ -1,32 +1,46 @@
 <div class="cart-popup" [@cartPopup]="state">
-  <div class="cart-popup-inside">
-    <div class="trashcan">
-      <img src="/assets/images/icons/trashcan.svg" alt="Delete item" />
-    </div>
-    <div class="cart-upper">
+  <div class="emtpy-cart" *ngIf="itemsInCart.length === 0">
+    Your cart is emtpy...
+  </div>
+  <div class="cart-popup-inside" *ngIf="itemsInCart.length > 0">
+    <div class="cart-upper" *ngFor="let cartItem of itemsInCart">
+      <div class="trashcan">
+        <img
+          src="/assets/images/icons/trashcan.svg"
+          alt="Delete item"
+          class="trashcan-img"
+          (click)="onItemDelete(cartItem.item.id)"
+        />
+      </div>
       <img
-        src="/assets/images/1-dinning-table.png"
-        alt=""
+        [src]="cartItem.item.imgPath"
+        [alt]="cartItem.item.name"
         class="product-img"
+        [routerLink]="[
+          '/',
+          'collections',
+          cartItem.item.category,
+          cartItem.item.name
+        ]"
       />
       <div class="up-right">
-        <p class="quantity">1x</p>
-        <p class="title">Best bed</p>
-        <p class="price">$908</p>
+        <p class="quantity">x {{ cartItem.quantity }}</p>
+        <p class="title">{{ cartItem.item.name }}</p>
+        <p class="price">${{ cartItem.item.price }}</p>
       </div>
     </div>
     <div class="cart-down">
       <div class="down-block">
         <p class="down-name">Price</p>
-        <p class="down-price">$908</p>
+        <p class="down-price">${{ totalItemsPrice$ | async }}</p>
       </div>
       <div class="down-block">
         <p class="down-name">Delivery</p>
-        <p class="down-price">$14</p>
+        <p class="down-price">$30</p>
       </div>
       <div class="down-block">
         <p class="down-name">Total</p>
-        <p class="down-price">$922</p>
+        <p class="down-price">${{ (totalItemsPrice$ | async)! + 30 }}</p>
       </div>
     </div>
     <div class="btn-container">

@@ -5,7 +5,7 @@ import { CartItem, CollectionItem } from '../data/data.model';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class CartService {
   quantityInCart!: number;
 
   itemsInCart: CartItem[] = [];
@@ -13,6 +13,8 @@ export class UserService {
   updatedQuantity$ = new BehaviorSubject(this.getTotalQuantity());
 
   updatedItemsInCart$ = new Subject<CartItem[]>();
+
+  totalCartSum$ = new BehaviorSubject<number>(0);
 
   constructor() {
     if (localStorage.getItem('cart')) {
@@ -31,24 +33,10 @@ export class UserService {
     }
 
     localStorage.setItem('cart', JSON.stringify(this.itemsInCart));
+    this.updatedItemsInCart$.next(this.itemsInCart);
+
     this.updateQuantityInCart();
-  }
-
-  getTotalQuantity(): number | null {
-    if (!localStorage.getItem('cart')) return null;
-    const addedItems = JSON.parse(localStorage.getItem('cart')!);
-    const totalQty = addedItems.reduce((prevVal: number, currVal: CartItem) => {
-      return prevVal + currVal.quantity;
-    }, 0);
-    return totalQty;
-  }
-
-  getItemsInCart() {
-    return this.itemsInCart.slice();
-  }
-
-  updateQuantityInCart() {
-    this.updatedQuantity$.next(this.getTotalQuantity());
+    this.getTotalCartPrice();
   }
 
   deleteItemInCart(id: number) {
@@ -60,5 +48,34 @@ export class UserService {
 
     this.updatedItemsInCart$.next(this.itemsInCart);
     this.updateQuantityInCart();
+    this.getTotalCartPrice();
+  }
+
+  getItemsInCart() {
+    this.getTotalCartPrice();
+    return this.itemsInCart.slice();
+  }
+
+  getTotalQuantity(): number | null {
+    if (!localStorage.getItem('cart')) return null;
+    const addedItems = JSON.parse(localStorage.getItem('cart')!);
+    const totalQty = addedItems.reduce((prevVal: number, currVal: CartItem) => {
+      return prevVal + currVal.quantity;
+    }, 0);
+    return totalQty;
+  }
+
+  updateQuantityInCart() {
+    this.updatedQuantity$.next(this.getTotalQuantity());
+  }
+
+  getTotalCartPrice() {
+    const totalPrice = this.itemsInCart.reduce(
+      (prevValue: number, currValue: CartItem) => {
+        return prevValue + currValue.item.price * currValue.quantity;
+      },
+      0
+    );
+    this.totalCartSum$.next(totalPrice);
   }
 }
