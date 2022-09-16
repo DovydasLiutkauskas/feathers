@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,7 @@ import { AddToCartModalComponent } from './shop/components/product-page/addToCar
 import { BreadcrumbsComponent } from './shop/components/shared/breadcrumbs/breadcrumbs.component';
 import { CartComponent } from './shop/components/cart/cart.component';
 import { CartPopupComponent } from './core/header/cart-popup/cart-popup.component';
+import ClickOutsideDirective from './core/header/cart-popup/clicked-outside.directive';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { CartPopupComponent } from './core/header/cart-popup/cart-popup.componen
     BreadcrumbsComponent,
     CartComponent,
     CartPopupComponent,
+    ClickOutsideDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

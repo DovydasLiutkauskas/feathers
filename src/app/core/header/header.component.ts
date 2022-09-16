@@ -18,14 +18,6 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, private userSerivce: UserService) {}
 
   ngOnInit(): void {
-    window.onclick = (e: MouseEvent) => {
-      if (e.target !== this.dropdownEl.nativeElement) {
-        this.dropdownEl.nativeElement.nextElementSibling.classList.remove(
-          'show'
-        );
-      }
-    };
-
     this.cartQuantity$ = this.userSerivce.updatedQuantity$;
   }
 
@@ -38,9 +30,20 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  onAnimate() {
-    this.cartState === 'hidden'
-      ? (this.cartState = 'shown')
-      : (this.cartState = 'hidden');
+  onAnimate(): void {
+    if (this.cartState === 'shown') {
+      this.cartState = 'hidden';
+      this.router.navigate(['collections/cart']);
+    } else {
+      this.cartState = 'shown';
+    }
+  }
+
+  clickedOutsideCart(): void {
+    this.cartState = 'hidden';
+  }
+
+  clickOutsideShop(): void {
+    this.dropdownEl.nativeElement.nextElementSibling.classList.remove('show');
   }
 }
