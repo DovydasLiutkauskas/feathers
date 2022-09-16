@@ -1,0 +1,38 @@
+<div class="cart-popup" [@cartPopup]="state">
+  <div class="cart-popup-inside">
+    <div class="trashcan">
+      <img src="/assets/images/icons/trashcan.svg" alt="Delete item" />
+    </div>
+    <div class="cart-upper">
+      <img
+        src="/assets/images/1-dinning-table.png"
+        alt=""
+        class="product-img"
+      />
+      <div class="up-right">
+        <p class="quantity">1x</p>
+        <p class="title">Best bed</p>
+        <p class="price">$908</p>
+      </div>
+    </div>
+    <div class="cart-down">
+      <div class="down-block">
+        <p class="down-name">Price</p>
+        <p class="down-price">$908</p>
+      </div>
+      <div class="down-block">
+        <p class="down-name">Delivery</p>
+        <p class="down-price">$14</p>
+      </div>
+      <div class="down-block">
+        <p class="down-name">Total</p>
+        <p class="down-price">$922</p>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button class="btn btn-dark buy-btn" routerLink="/collections/cart">
+        BUY
+      </button>
+    </div>
+  </div>
+</div>

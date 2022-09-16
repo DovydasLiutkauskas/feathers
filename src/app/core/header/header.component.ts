@@ -9,6 +9,8 @@ import { UserService } from 'src/app/shared/services/user-cart.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  cartState = 'hidden';
+
   @ViewChild('dropdown') dropdownEl!: ElementRef;
 
   cartQuantity$!: Observable<number | null>;
@@ -34,5 +36,11 @@ export class HeaderComponent implements OnInit {
     } else {
       element.nextElementSibling?.classList.add('show');
     }
+  }
+
+  onAnimate() {
+    this.cartState === 'hidden'
+      ? (this.cartState = 'shown')
+      : (this.cartState = 'hidden');
   }
 }

@@ -63,13 +63,11 @@
           </li>
         </ul>
         <div class="right-nav" role="search">
+          <app-cart-popup [state]="cartState"></app-cart-popup>
           <div class="glass">
             <img src="./assets/images/magnyfing.svg" alt="Shopping cart" />
           </div>
-          <button
-            class="btn btn-dark join-btn"
-            [routerLink]="['collections/cart']"
-          >
+          <button class="btn btn-dark join-btn" (click)="onAnimate()">
             <span class="btn-text">CART</span>
             <img src="./assets/images/cart.svg" alt="Shopping cart" />
             <span class="cart-qty" *ngIf="cartQuantity$ | async">{{

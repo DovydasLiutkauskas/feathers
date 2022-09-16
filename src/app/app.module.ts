@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { RelatedProductsComponent } from './shop/components/product-page/related
 import { AddToCartModalComponent } from './shop/components/product-page/addToCart-modal/add-to-cart-modal.component';
 import { BreadcrumbsComponent } from './shop/components/shared/breadcrumbs/breadcrumbs.component';
 import { CartComponent } from './shop/components/cart/cart.component';
+import { CartPopupComponent } from './core/header/cart-popup/cart-popup.component';
 
 @NgModule({
   declarations: [
@@ -49,8 +51,9 @@ import { CartComponent } from './shop/components/cart/cart.component';
     AddToCartModalComponent,
     BreadcrumbsComponent,
     CartComponent,
+    CartPopupComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

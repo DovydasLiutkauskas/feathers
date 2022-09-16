@@ -39,8 +39,9 @@ html {
 
 /* STYLES FOR BUTTON */
 .btn {
-  padding: 8px 32px !important;
-  border-radius: 0 !important;
-  letter-spacing: 1px !important;
-  font-weight: bold !important;
+  padding: 8px 32px;
+  border-radius: 0;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
 }
