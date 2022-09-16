@@ -37,6 +37,7 @@ export default class ClickOutsideDirective implements AfterViewInit, OnDestroy {
   isInside(elementToCheck: HTMLElement): boolean {
     if (elementToCheck.classList.contains('product-img')) return false;
     if (elementToCheck.classList.contains('trashcan-img')) return true;
+    if (elementToCheck.classList.contains('dropdown-item')) return false;
     return (
       elementToCheck === this.element.nativeElement ||
       this.element.nativeElement.contains(elementToCheck)

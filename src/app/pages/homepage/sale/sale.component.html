@@ -4,25 +4,27 @@
     <h4 class="red">SUMMER SALE</h4>
   </div>
   <article class="products">
-    <div class="product">
-      <img src="/assets/images/promotion/1-lamp.png" alt="" />
-      <p class="product-name">SPOT lamp</p>
-      <p class="product-price">$32</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/promotion/2-table.png" alt="" />
-      <p class="product-name">SPOT lamp</p>
-      <p class="product-price">$32</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/promotion/3-chair.png" alt="" />
-      <p class="product-name">SPOT lamp</p>
-      <p class="product-price">$32</p>
-    </div>
-    <div class="product">
-      <img src="/assets/images/promotion/4-chair.png" alt="" />
-      <p class="product-name">SPOT lamp</p>
-      <p class="product-price">$32</p>
+    <div class="product" *ngFor="let item of promoItemList | slice: 0:4">
+      <div class="img-container">
+        <img
+          [src]="item.imgPath"
+          [alt]="item.name"
+          [routerLink]="['/', 'collections', item.category, item.name]"
+          class="product-img"
+        />
+        <span class="img-caption">VIEW PRODUCT</span>
+      </div>
+
+      <p class="product-name">{{ item.name }}</p>
+      <div class="price-container">
+        <p class="old-price">${{ item.price }}</p>
+        <p class="product-price">${{ item.salePrice }}</p>
+      </div>
+      <div class="discount">
+        <p>
+          {{ (item.price - item.salePrice!) / item.price | percent }}
+        </p>
+      </div>
     </div>
   </article>
 </section>

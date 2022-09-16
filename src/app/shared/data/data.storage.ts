@@ -7,6 +7,7 @@ const bedItemList = [
     imgPath: '/assets/images/collections/beds/beds-1.png',
     category: 'beds',
     id: idCounter++,
+    salePrice: 499,
   },
   {
     name: 'MINDFUL bed',
@@ -59,6 +60,7 @@ const sheetItemList = [
     imgPath: '/assets/images/collections/sheets/sheets-4.png',
     category: 'sheets',
     id: idCounter++,
+    salePrice: 19,
   },
 ];
 
@@ -121,6 +123,7 @@ const rugItemsList = [
     imgPath: '/assets/images/collections/rugs/rugs-4.png',
     category: 'rugs',
     id: idCounter++,
+    salePrice: 9,
   },
 ];
 
@@ -138,6 +141,7 @@ const kidItemList = [
     imgPath: '/assets/images/collections/kids/kids-2.png',
     category: 'kids',
     id: idCounter++,
+    salePrice: 89,
   },
   {
     name: 'CRAZY chandeler',

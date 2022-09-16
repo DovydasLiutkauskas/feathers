@@ -3,6 +3,7 @@
   justify-content: center;
   padding-top: 120px;
   padding-bottom: 120px;
+  flex-wrap: wrap;
 }
 
 .products {
@@ -13,6 +14,7 @@
 
 .product {
   text-align: center;
+  position: relative;
 }
 
 .product-name {
@@ -26,6 +28,17 @@
   color: #c60134;
 }
 
+.old-price {
+  font-size: 14px;
+  margin-right: 6px;
+  text-decoration: line-through;
+}
+
+.price-container {
+  display: flex;
+  justify-content: center;
+}
+
 .title {
   display: flex;
   flex-direction: column;
@@ -37,4 +50,27 @@
 
 .red {
   color: #c60134;
+}
+
+.product-img {
+  height: 216px;
+}
+
+.img-caption {
+  font-size: 14px;
+}
+
+.discount {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.discount > p {
+  margin: 0;
+  padding: 0.5rem;
 }

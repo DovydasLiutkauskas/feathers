@@ -4,7 +4,7 @@ export interface CollectionItem {
   imgPath: string;
   id: number;
   category: string;
-  quantity?: number;
+  salePrice?: number;
 }
 
 export interface CategoryModel {
