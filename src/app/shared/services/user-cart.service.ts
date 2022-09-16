@@ -6,8 +6,6 @@ import { CartItem, CollectionItem } from '../data/data.model';
   providedIn: 'root',
 })
 export class CartService {
-  quantityInCart!: number;
-
   itemsInCart: CartItem[] = [];
 
   updatedQuantity$ = new BehaviorSubject(this.getTotalQuantity());

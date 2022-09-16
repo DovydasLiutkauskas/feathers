@@ -10,7 +10,9 @@
       </div>
     </div>
     <div class="right-side">
-      <p class="cart-info-text">You have 1 product in your cart.</p>
+      <p class="cart-info-text">
+        You have {{ cartQuantity$ | async }} product in your cart.
+      </p>
       <hr />
       <div class="price-info">
         <span class="name">Price:</span>

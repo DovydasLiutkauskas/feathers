@@ -1,5 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
+import { CartService } from 'src/app/shared/services/user-cart.service';
 import { ProductPageService } from '../../../services/product-page.service';
 
 @Component({
@@ -10,9 +12,16 @@ import { ProductPageService } from '../../../services/product-page.service';
 export class AddToCartModalComponent implements OnInit, OnDestroy {
   @Input() currentItem!: CollectionItem;
 
-  constructor(private productService: ProductPageService) {}
+  cartQuantity$!: Observable<number | null>;
+
+  constructor(
+    private productService: ProductPageService,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
+    this.cartQuantity$ = this.cartService.updatedQuantity$;
+
     this.checkPressedKey = this.checkPressedKey.bind(this);
     window.addEventListener('keydown', this.checkPressedKey);
   }
