@@ -12,6 +12,7 @@ h3 {
 }
 
 .related-product {
+  position: relative;
   width: 30%;
 }
 
@@ -27,4 +28,15 @@ h3 {
 
 .product-price {
   font-weight: bold;
+}
+
+.sales-price {
+  color: #c60134;
+  font-weight: bold;
+}
+
+.older-price {
+  margin-right: 0.5rem;
+  text-decoration: line-through;
+  font-weight: normal;
 }

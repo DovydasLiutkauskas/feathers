@@ -13,7 +13,16 @@
     </div>
     <div class="product-info">
       <p class="product-name">{{ item.name }}</p>
-      <p class="product-price">${{ item.price }}</p>
+      <div class="price-container">
+        <p class="product-price" [ngClass]="{ 'older-price': item.salePrice }">
+          ${{ item.price }}
+        </p>
+        <p class="sales-price" *ngIf="item.salePrice">${{ item.salePrice }}</p>
+      </div>
     </div>
+    <app-sales-percentage
+      *ngIf="item.salePrice"
+      [saleItem]="item"
+    ></app-sales-percentage>
   </article>
 </section>
