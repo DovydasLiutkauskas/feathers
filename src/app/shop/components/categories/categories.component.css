@@ -11,3 +11,7 @@
 .category-section {
   text-align: center;
 }
+
+.product {
+  position: relative;
+}

@@ -45,3 +45,22 @@ html {
   font-weight: 600;
   font-size: 14px;
 }
+
+/* STYLES FOR DISCOUNT PERCENTAGE */
+.old-price {
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+.product-sales-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #c60134;
+}
+
+.price-container {
+  display: flex;
+  justify-content: center;
+}

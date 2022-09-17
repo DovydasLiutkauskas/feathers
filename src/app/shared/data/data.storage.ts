@@ -1,3 +1,5 @@
+import { CategoryModel, CollectionItem } from './data.model';
+
 let idCounter = 0;
 
 const bedItemList = [
@@ -159,7 +161,7 @@ const kidItemList = [
   },
 ];
 
-export const collections: { [key: string]: any } = {
+export const collections: { [key: string]: CategoryModel } = {
   beds: {
     items: bedItemList,
   },

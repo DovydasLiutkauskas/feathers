@@ -5,7 +5,9 @@
       <img [src]="currentItem.imgPath" alt="" class="product-img" />
       <div class="product-info">
         <h4 class="product-name">{{ currentItem.name }}</h4>
-        <p class="product-price">${{ currentItem.price }}</p>
+        <p class="product-price">
+          ${{ currentItem.salePrice || currentItem.price }}
+        </p>
         <p class="product-qty">Qty: 1</p>
       </div>
     </div>
@@ -16,16 +18,26 @@
       <hr />
       <div class="price-info">
         <span class="name">Price:</span>
-        <span class="product-price price">${{ currentItem.price }}</span>
+        <span class="product-price price"
+          >${{ currentItem.salePrice || currentItem.price }}</span
+        >
       </div>
       <div class="delivery-info">
         <span class="name">Delivery:</span>
         <span class="delivery-price price">$14</span>
       </div>
+      <div class="savings-info" *ngIf="currentItem.salePrice">
+        <span class="name">Savings:</span>
+        <span class="savings price"
+          >-${{ currentItem.price - currentItem.salePrice }}</span
+        >
+      </div>
       <hr />
       <div class="total-price-info">
         <span class="name">Total:</span>
-        <span class="total-price price">${{ currentItem.price + 14 }}</span>
+        <span class="total-price price"
+          >${{ (currentItem.salePrice || currentItem.price) + 14 }}</span
+        >
       </div>
       <div class="btn-group">
         <button

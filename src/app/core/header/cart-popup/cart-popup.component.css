@@ -75,3 +75,15 @@
   padding: 1rem;
   text-align: center;
 }
+
+.price-container {
+  font-weight: bold;
+}
+
+.price {
+  margin-right: 0.5rem;
+}
+
+.sale-price {
+  color: #c60134;
+}

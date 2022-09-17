@@ -38,3 +38,7 @@
   letter-spacing: 2px;
   font-weight: bold;
 }
+
+.product {
+  position: relative;
+}

@@ -2,21 +2,27 @@
 <section class="category" *ngFor="let collection of colletionList | keyvalue">
   <h2 class="title">{{ collection.key | uppercase }}</h2>
   <div class="category-products">
-    <div class="product" *ngFor="let i of [0, 1, 2, 3]">
+    <div
+      class="product"
+      *ngFor="let item of collection.value.items | slice: 0:4"
+    >
       <div
         class="img-container"
-        [routerLink]="collection.key + '/' + collection.value.items[i].name"
+        [routerLink]="collection.key + '/' + item.name"
       >
-        <img
-          [src]="collection.value.items[i].imgPath"
-          [alt]="collection.value.items[i].name"
-          class="product-img"
-        />
+        <img [src]="item.imgPath" [alt]="item.name" class="product-img" />
         <span class="img-caption">VIEW PRODUCT</span>
       </div>
 
-      <p class="product-name">{{ collection.value.items[i].name }}</p>
-      <p class="product-price">${{ collection.value.items[i].price }}</p>
+      <p class="product-name">{{ item.name }}</p>
+      <div class="price-container">
+        <p class="product-price" [ngClass]="{ 'old-price': item.salePrice }">
+          ${{ item.price }}
+        </p>
+        <p class="product-sales-price" *ngIf="item.salePrice">
+          ${{ item.salePrice }}
+        </p>
+      </div>
     </div>
   </div>
   <button class="btn btn-dark" [routerLink]="collection.key">SEE ALL</button>

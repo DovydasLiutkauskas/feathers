@@ -8,7 +8,7 @@ export interface CollectionItem {
 }
 
 export interface CategoryModel {
-  name: CollectionItem[];
+  items: CollectionItem[];
 }
 
 export interface CartItem {

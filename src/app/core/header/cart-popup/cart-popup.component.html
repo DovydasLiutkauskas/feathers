@@ -26,7 +26,12 @@
       <div class="up-right">
         <p class="quantity">x {{ cartItem.quantity }}</p>
         <p class="title">{{ cartItem.item.name }}</p>
-        <p class="price">${{ cartItem.item.price }}</p>
+        <div class="price-container">
+          <p class="price" [ngClass]="{ 'old-price': cartItem.item.salePrice }">
+            ${{ cartItem.item.price }}
+          </p>
+          <p class="sale-price">${{ cartItem.item.salePrice }}</p>
+        </div>
       </div>
     </div>
     <div class="cart-down">

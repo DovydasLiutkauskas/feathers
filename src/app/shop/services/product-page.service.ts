@@ -11,15 +11,15 @@ export class ProductPageService {
 
   backgroundImage$ = new BehaviorSubject('main');
 
-  relatedItems$ = new BehaviorSubject([]);
+  relatedItems$ = new BehaviorSubject<CollectionItem[]>([]);
 
   constructor() {}
 
-  getItem(category: string, name: string) {
+  getItem(category: string, name: string): CollectionItem {
     this.updateRelatedItems(category, name);
     return collections[category].items.find(
       (item: CollectionItem) => item.name === name
-    );
+    )!;
   }
 
   updateRelatedItems(categoryName: string, itemName: string) {

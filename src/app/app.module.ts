@@ -27,6 +27,7 @@ import { BreadcrumbsComponent } from './shop/components/shared/breadcrumbs/bread
 import { CartComponent } from './shop/components/cart/cart.component';
 import { CartPopupComponent } from './core/header/cart-popup/cart-popup.component';
 import ClickOutsideDirective from './core/header/cart-popup/clicked-outside.directive';
+import { SalesPercentageComponent } from './shared/components/sales-percentage/sales-percentage.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import ClickOutsideDirective from './core/header/cart-popup/clicked-outside.dire
     CartComponent,
     CartPopupComponent,
     ClickOutsideDirective,
+    SalesPercentageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

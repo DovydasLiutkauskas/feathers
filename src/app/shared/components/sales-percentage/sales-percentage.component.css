@@ -1,0 +1,14 @@
+.discount {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.discount > p {
+  margin: 0;
+  padding: 0.5rem;
+}

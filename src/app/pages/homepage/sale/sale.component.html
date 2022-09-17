@@ -18,13 +18,9 @@
       <p class="product-name">{{ item.name }}</p>
       <div class="price-container">
         <p class="old-price">${{ item.price }}</p>
-        <p class="product-price">${{ item.salePrice }}</p>
+        <p class="product-sales-price">${{ item.salePrice }}</p>
       </div>
-      <div class="discount">
-        <p>
-          {{ (item.price - item.salePrice!) / item.price | percent }}
-        </p>
-      </div>
+      <app-sales-percentage [saleItem]="item"></app-sales-percentage>
     </div>
   </article>
 </section>

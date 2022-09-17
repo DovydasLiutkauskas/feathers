@@ -68,7 +68,8 @@
 }
 
 .price-info,
-.delivery-info {
+.delivery-info,
+.savings-info {
   padding: 0.5rem 0;
 }
 
@@ -84,4 +85,8 @@
 
 .btn-group {
   margin-top: auto;
+}
+
+.savings-info > span {
+  color: #c60134;
 }

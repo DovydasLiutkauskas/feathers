@@ -70,7 +70,8 @@ export class CartService {
   getTotalCartPrice() {
     const totalPrice = this.itemsInCart.reduce(
       (prevValue: number, currValue: CartItem) => {
-        return prevValue + currValue.item.price * currValue.quantity;
+        const price = currValue.item.salePrice || currValue.item.price;
+        return prevValue + price * currValue.quantity;
       },
       0
     );

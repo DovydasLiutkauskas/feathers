@@ -10,6 +10,7 @@
 
 .left-section {
   width: 40%;
+  position: relative;
 }
 
 .img-group {
@@ -87,4 +88,19 @@
 
 .arrow-back:hover {
   height: 20px;
+}
+
+.price-container {
+  justify-content: start;
+}
+
+.sale-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-weight: normal;
 }

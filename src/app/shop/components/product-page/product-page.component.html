@@ -5,6 +5,10 @@
 <div class="main">
   <section class="main-section">
     <article class="left-section">
+      <app-sales-percentage
+        *ngIf="currentItem.salePrice"
+        [saleItem]="currentItem"
+      ></app-sales-percentage>
       <img
         class="main-img"
         [src]="currentItem.imgPath"
@@ -59,7 +63,14 @@
         </ul>
       </div>
       <div class="button-section">
-        <span class="price">${{ currentItem.price }}</span>
+        <div class="price-container">
+          <p class="price" [ngClass]="{ 'old-price': currentItem.salePrice }">
+            ${{ currentItem.price }}
+          </p>
+          <p class="sale-price" *ngIf="currentItem.salePrice">
+            ${{ currentItem.salePrice }}
+          </p>
+        </div>
         <button class="btn btn-dark" (click)="onAddToCart()">
           ADD TO CART
         </button>
