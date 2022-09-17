@@ -76,8 +76,9 @@
   text-align: center;
 }
 
-.price-container {
+.price-container-2 {
   font-weight: bold;
+  display: flex;
 }
 
 .price {
