@@ -6,10 +6,12 @@ import { CollectionsMainComponent } from './shop/components/main/collections-mai
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProductPageComponent } from './shop/components/product-page/product-page.component';
 import { CartComponent } from './shop/components/cart/cart.component';
+import { SummerSaleComponent } from './pages/summer-sale/summer-sale.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomepageComponent },
+  { path: 'summer-sale', component: SummerSaleComponent },
   {
     path: 'collections',
     component: ShopComponent,

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CollectionItem } from '../../data/data.model';
 
 @Component({
@@ -6,12 +6,6 @@ import { CollectionItem } from '../../data/data.model';
   templateUrl: './sales-percentage.component.html',
   styleUrls: ['./sales-percentage.component.css'],
 })
-export class SalesPercentageComponent implements OnInit {
+export class SalesPercentageComponent {
   @Input() saleItem!: CollectionItem;
-
-  constructor() {}
-
-  ngOnInit(): void {
-    console.log('wtf');
-  }
 }

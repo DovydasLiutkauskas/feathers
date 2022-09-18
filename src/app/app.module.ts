@@ -29,6 +29,7 @@ import { CartPopupComponent } from './core/header/cart-popup/cart-popup.componen
 import ClickOutsideDirective from './core/header/cart-popup/clicked-outside.directive';
 import { SalesPercentageComponent } from './shared/components/sales-percentage/sales-percentage.component';
 import { ProductDisplayComponent } from './shared/components/product-display/product-display.component';
+import { SummerSaleComponent } from './pages/summer-sale/summer-sale.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ProductDisplayComponent } from './shared/components/product-display/pro
     ClickOutsideDirective,
     SalesPercentageComponent,
     ProductDisplayComponent,
+    SummerSaleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

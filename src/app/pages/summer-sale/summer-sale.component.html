@@ -1,0 +1,18 @@
+<div class="header">
+  <h1 class="title-main">SUMMER SALE</h1>
+</div>
+<section class="summer-sale-main" *ngIf="saleProducts.length > 0">
+  <h2 class="title">SUMMER SALE</h2>
+  <p class="text">Stay tuned, promotions are changing weekly!</p>
+  <article class="sale-products">
+    <app-product-display
+      *ngFor="let item of saleProducts"
+      [currentItem]="item"
+      [routLink]="['/', 'collections', item.category, item.name]"
+    ></app-product-display>
+  </article>
+</section>
+<section class="no-products" *ngIf="saleProducts.length === 0">
+  <h3>Currently, there are no ongoing promotions, please visit later...</h3>
+  <button class="btn btn-dark" routerLink="/collections">GO TO SHOP</button>
+</section>
