@@ -1,28 +1,8 @@
 <h3>RELATED PRODUCTS</h3>
 <section class="related-products">
-  <article
-    class="related-product"
+  <app-product-display
     *ngFor="let item of relatedProducts$ | async"
-  >
-    <div
-      class="img-container"
-      [routerLink]="['/', 'collections', item.category, item.name]"
-    >
-      <img [src]="item.imgPath" [alt]="item.name" class="product-img" />
-      <span class="img-caption">VIEW PRODUCT</span>
-    </div>
-    <div class="product-info">
-      <p class="product-name">{{ item.name }}</p>
-      <div class="price-container">
-        <p class="product-price" [ngClass]="{ 'older-price': item.salePrice }">
-          ${{ item.price }}
-        </p>
-        <p class="sales-price" *ngIf="item.salePrice">${{ item.salePrice }}</p>
-      </div>
-    </div>
-    <app-sales-percentage
-      *ngIf="item.salePrice"
-      [saleItem]="item"
-    ></app-sales-percentage>
-  </article>
+    [currentItem]="item"
+    [routLink]="['/', 'collections', item.category, item.name]"
+  ></app-product-display>
 </section>

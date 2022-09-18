@@ -1,0 +1,12 @@
+.product {
+  position: relative;
+}
+
+.product-price {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.product-name {
+  margin-top: 1.5rem;
+}

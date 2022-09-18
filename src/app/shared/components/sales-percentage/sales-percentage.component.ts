@@ -11,5 +11,7 @@ export class SalesPercentageComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('wtf');
+  }
 }

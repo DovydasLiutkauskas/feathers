@@ -1,0 +1,24 @@
+<div class="product">
+  <div class="img-container" [routerLink]="routLink">
+    <img
+      [src]="currentItem.imgPath"
+      [alt]="currentItem.name"
+      class="product-img"
+    />
+    <span class="img-caption">VIEW PRODUCT</span>
+  </div>
+
+  <p class="product-name">{{ currentItem.name }}</p>
+  <div class="price-container">
+    <p class="product-price" [ngClass]="{ 'old-price': currentItem.salePrice }">
+      ${{ currentItem.price }}
+    </p>
+    <p class="product-sales-price" *ngIf="currentItem.salePrice">
+      ${{ currentItem.salePrice }}
+    </p>
+  </div>
+  <app-sales-percentage
+    *ngIf="currentItem.salePrice"
+    [saleItem]="currentItem"
+  ></app-sales-percentage>
+</div>

@@ -2,39 +2,10 @@
   <p class="subtitle">CHECK OUT</p>
   <h3 class="title">YOUR FAVORITES</h3>
   <article class="products">
-    <div class="product" *ngFor="let randomItem of randomItems">
-      <div class="img-container">
-        <img
-          [src]="randomItem.imgPath"
-          [alt]="randomItem.name"
-          class="product-img"
-          [routerLink]="[
-            '/',
-            'collections',
-            randomItem.category,
-            randomItem.name
-          ]"
-        />
-        <span class="img-caption"> VIEW PRODUCT </span>
-      </div>
-
-      <p class="product-name">{{ randomItem.name }}</p>
-      <div class="price-container">
-        <p
-          class="product-price"
-          [ngClass]="{ 'old-price': randomItem.salePrice }"
-        >
-          ${{ randomItem.price }}
-        </p>
-        <p class="product-sales-price" *ngIf="randomItem.salePrice">
-          ${{ randomItem.salePrice }}
-        </p>
-      </div>
-
-      <app-sales-percentage
-        *ngIf="randomItem?.salePrice"
-        [saleItem]="randomItem"
-      ></app-sales-percentage>
-    </div>
+    <app-product-display
+      *ngFor="let randomItem of randomItems"
+      [currentItem]="randomItem"
+      [routLink]="['/', 'collections', randomItem.category, randomItem.name]"
+    ></app-product-display>
   </article>
 </section>
