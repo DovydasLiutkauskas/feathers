@@ -1,6 +1,7 @@
 <app-add-to-cart-modal
   *ngIf="showModal$ | async"
   [currentItem]="currentItem"
+  [quantity]="qtyForm.get('quantity')?.value"
 ></app-add-to-cart-modal>
 <div class="main">
   <section class="main-section">
@@ -71,9 +72,32 @@
             ${{ currentItem.salePrice }}
           </p>
         </div>
-        <button class="btn btn-dark" (click)="onAddToCart()">
-          ADD TO CART
-        </button>
+
+        <form
+          [formGroup]="qtyForm"
+          (ngSubmit)="onAddToCart(qtyForm.get('quantity')?.value)"
+        >
+          <div class="qty-container">
+            <label for="quantity" class="qty-name">Quantity:</label>
+            <input
+              formControlName="quantity"
+              type="number"
+              class="qty-input"
+              id="quantity"
+              name="quantity"
+            />
+            <span class="error-msg" *ngIf="qtyForm.invalid && qtyForm.touched"
+              >Enter positive number</span
+            >
+          </div>
+          <button
+            class="btn btn-dark"
+            type="submit"
+            [disabled]="qtyForm.invalid"
+          >
+            ADD TO CART
+          </button>
+        </form>
       </div>
     </article>
   </section>

@@ -11,6 +11,7 @@ import { ProductPageService } from '../../../services/product-page.service';
 })
 export class AddToCartModalComponent implements OnInit, OnDestroy {
   @Input() currentItem!: CollectionItem;
+  @Input() quantity: number = 1;
 
   cartQuantity$!: Observable<number | null>;
 

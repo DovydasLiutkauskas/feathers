@@ -8,7 +8,7 @@
         <p class="product-price">
           ${{ currentItem.salePrice || currentItem.price }}
         </p>
-        <p class="product-qty">Qty: 1</p>
+        <p class="product-qty">Qty: {{ quantity }}</p>
       </div>
     </div>
     <div class="right-side">
@@ -19,24 +19,26 @@
       <div class="price-info">
         <span class="name">Price:</span>
         <span class="product-price price"
-          >${{ currentItem.salePrice || currentItem.price }}</span
+          >${{ (currentItem.salePrice || currentItem.price) * quantity }}</span
         >
       </div>
       <div class="delivery-info">
         <span class="name">Delivery:</span>
-        <span class="delivery-price price">$14</span>
+        <span class="delivery-price price">$30</span>
       </div>
       <div class="savings-info" *ngIf="currentItem.salePrice">
         <span class="name">Savings:</span>
         <span class="savings price"
-          >-${{ currentItem.price - currentItem.salePrice }}</span
+          >-${{ (currentItem.price - currentItem.salePrice) * quantity }}</span
         >
       </div>
       <hr />
       <div class="total-price-info">
         <span class="name">Total:</span>
         <span class="total-price price"
-          >${{ (currentItem.salePrice || currentItem.price) + 14 }}</span
+          >${{
+            (currentItem.salePrice || currentItem.price) * quantity + 30
+          }}</span
         >
       </div>
       <div class="btn-group">

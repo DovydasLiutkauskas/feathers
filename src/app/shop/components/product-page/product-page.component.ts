@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription, Observable } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
@@ -16,6 +17,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   currentItem$$!: Subscription;
   currentItem!: CollectionItem;
   showModal$!: Observable<boolean>;
+  qtyForm!: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,14 +38,22 @@ export class ProductPageComponent implements OnInit, OnDestroy {
         params['id']
       );
     });
+
+    this.qtyForm = new FormGroup({
+      quantity: new FormControl(1, [
+        Validators.required,
+        Validators.min(1),
+        Validators.pattern('^(0|[1-9][0-9]*)$'),
+      ]),
+    });
   }
 
   goBack() {
     this.location.back();
   }
 
-  onAddToCart() {
-    this.cartService.addItemToCart(this.currentItem, 1);
+  onAddToCart(qty: number) {
+    this.cartService.addItemToCart(this.currentItem, qty);
 
     this.productService.openModal();
   }
