@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackgroundImageService } from 'src/app/shared/services/background-image.service';
 import { collections } from '../../../shared/data/data.storage';
 
 @Component({
@@ -9,7 +10,9 @@ import { collections } from '../../../shared/data/data.storage';
 export class CollectionsMainComponent implements OnInit {
   colletionList = collections;
 
-  constructor() {}
+  constructor(private backgroundService: BackgroundImageService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.backgroundService.changeBackgroundImage('collections');
+  }
 }

@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CartItem } from 'src/app/shared/data/data.model';
+import { BackgroundImageService } from 'src/app/shared/services/background-image.service';
 import { CartService } from 'src/app/shared/services/user-cart.service';
 import { ProductPageService } from '../../services/product-page.service';
 
@@ -19,13 +20,12 @@ export class CartComponent implements OnInit, OnDestroy {
   constructor(
     private productService: ProductPageService,
     private cartService: CartService,
-    private location: Location
+    private location: Location,
+    private backgroundService: BackgroundImageService
   ) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.productService.changeBackgroundImage('cart');
-    }, 0);
+    this.backgroundService.changeBackgroundImage('cart');
 
     this.currentCartItems = this.cartService.getItemsInCart();
 

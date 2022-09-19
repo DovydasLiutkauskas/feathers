@@ -1,6 +1,4 @@
-<section class="header" [ngClass]="pageBackground">
-  <h1 [textContent]="router.url | pageName"></h1>
-</section>
+<app-page-header></app-page-header>
 <app-categories-list></app-categories-list>
 <app-breadcrumbs *ngIf="(router.url | pageName) !== 'CART'"></app-breadcrumbs>
 <router-outlet></router-outlet>

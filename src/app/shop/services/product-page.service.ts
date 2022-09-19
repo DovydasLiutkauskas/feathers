@@ -9,8 +9,6 @@ import { collections } from 'src/app/shared/data/data.storage';
 export class ProductPageService {
   showModal$ = new BehaviorSubject(false);
 
-  backgroundImage$ = new BehaviorSubject('main');
-
   relatedItems$ = new BehaviorSubject<CollectionItem[]>([]);
 
   constructor() {}
@@ -35,9 +33,5 @@ export class ProductPageService {
 
   closeModal() {
     this.showModal$.next(false);
-  }
-
-  changeBackgroundImage(name: string) {
-    this.backgroundImage$.next(name);
   }
 }

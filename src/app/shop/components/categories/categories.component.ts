@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
+import { BackgroundImageService } from 'src/app/shared/services/background-image.service';
 import { CategoryDataService } from '../../services/category-data.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class CollectionsCategoriesComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private categoryService: CategoryDataService
+    private categoryService: CategoryDataService,
+    private backgroundService: BackgroundImageService
   ) {}
 
   ngOnInit(): void {
@@ -24,6 +26,7 @@ export class CollectionsCategoriesComponent implements OnInit, OnDestroy {
       this.currentCategoryItems = this.categoryService.getCategoryData(
         url['category']
       );
+      this.backgroundService.changeBackgroundImage(url['category']);
     });
   }
 

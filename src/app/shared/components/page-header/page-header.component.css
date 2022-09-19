@@ -1,0 +1,16 @@
+.header {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  color: black;
+  font-size: 64px;
+  letter-spacing: 0.06em;
+}

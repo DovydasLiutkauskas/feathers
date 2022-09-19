@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription, Observable } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
+import { BackgroundImageService } from 'src/app/shared/services/background-image.service';
 import { CartService } from 'src/app/shared/services/user-cart.service';
 import { ProductPageService } from '../../services/product-page.service';
 
@@ -20,10 +21,13 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private productService: ProductPageService,
     private location: Location,
-    private cartService: CartService
+    private cartService: CartService,
+    private backgroundSerivce: BackgroundImageService
   ) {}
 
   ngOnInit(): void {
+    this.backgroundSerivce.changeBackgroundImage('product-page');
+
     this.showModal$ = this.productService.showModal$;
 
     this.currentItem$$ = this.route.params.subscribe((params: Params) => {
@@ -32,10 +36,6 @@ export class ProductPageComponent implements OnInit, OnDestroy {
         params['id']
       );
     });
-
-    setTimeout(() => {
-      this.productService.changeBackgroundImage('product-page');
-    }, 0);
   }
 
   goBack() {
@@ -50,6 +50,5 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.currentItem$$.unsubscribe();
-    this.productService.changeBackgroundImage('main');
   }
 }

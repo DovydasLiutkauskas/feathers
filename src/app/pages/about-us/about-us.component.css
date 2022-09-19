@@ -1,0 +1,21 @@
+.our-story {
+  margin-top: 3rem;
+  padding: 0 85px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.story-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .story-container {
+    flex-wrap: wrap;
+  }
+}

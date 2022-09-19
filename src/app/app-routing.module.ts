@@ -7,11 +7,13 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProductPageComponent } from './shop/components/product-page/product-page.component';
 import { CartComponent } from './shop/components/cart/cart.component';
 import { SummerSaleComponent } from './pages/summer-sale/summer-sale.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomepageComponent },
   { path: 'summer-sale', component: SummerSaleComponent },
+  { path: 'about-us', component: AboutUsComponent },
   {
     path: 'collections',
     component: ShopComponent,
