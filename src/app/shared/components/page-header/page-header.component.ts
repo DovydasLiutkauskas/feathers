@@ -23,7 +23,6 @@ export class PageHeaderComponent implements OnInit, OnDestroy {
     this.currentPathBackground$$ =
       this.backgroundService.backgroundImage$.subscribe((imgUrl: string) => {
         this.currentPathBackground = imgUrl;
-        console.log(imgUrl);
       });
   }
 

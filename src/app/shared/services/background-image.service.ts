@@ -8,6 +8,7 @@ export class BackgroundImageService {
   backgroundImgPaths: { [key: string]: string } = {
     'about-us': '/assets/images/backgrounds/autumn-background.jpg',
     'summer-sale': '/assets/images/backgrounds/palm-tree.jpg',
+    contact: '/assets/images/backgrounds/contact-background.jpg',
     collections: '/assets/images/backgrounds/collections-header.png',
     kids: '/assets/images/backgrounds/kids-background.jpg',
     sheets: '/assets/images/backgrounds/collections-header.png',

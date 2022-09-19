@@ -1,0 +1,136 @@
+<app-page-header></app-page-header>
+<section class="contact" *ngIf="!formSubmited">
+  <h3 class="title">Please fill the from below</h3>
+  <form
+    class="row g-3 w-75"
+    [formGroup]="contactUsForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <span
+      class="form-error"
+      *ngIf="contactUsForm.invalid && contactUsForm.touched"
+      >Please fill all required
+    </span>
+    <div class="col-md-6 mb-3">
+      <label for="email" class="form-label">Email*</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="example@yahoo.com"
+        formControlName="email"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          contactUsForm.get('email')?.invalid &&
+          contactUsForm.get('email')?.touched
+        "
+        >{{contactUsForm.get('email')?.errors?.['required'] ? 'This field is required' : 'Please enter valid email'}}</span
+      >
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="name" class="form-label">Name*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="David Junior"
+        formControlName="name"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          contactUsForm.get('name')?.invalid &&
+          contactUsForm.get('name')?.touched
+        "
+        >This field is required</span
+      >
+    </div>
+    <div class="col-12 mb-3">
+      <label for="subject" class="form-label">Subject*</label>
+      <span
+        class="characters-tracker"
+        [ngClass]="{ 'max-length-error': subjectCount > 30 }"
+        >{{ subjectCount }} / 30 characters max</span
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="subject"
+        placeholder="Didn't get my order..."
+        formControlName="subject"
+        (input)="updateSubjectCount($event)"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          contactUsForm.get('subject')?.invalid &&
+          contactUsForm.get('subject')?.touched
+        "
+        >{{contactUsForm.get('subject')?.errors?.['required'] ? 'This field is required' : 'The limit is 30 characters'}}</span
+      >
+    </div>
+
+    <div class="col-12 mb-3">
+      <label for="message" class="form-label">Your message*</label>
+      <span
+        class="characters-tracker"
+        [ngClass]="{ 'max-length-error': messageCount > 500 }"
+        >{{ messageCount }} / 500 characters max</span
+      >
+      <textarea
+        type="text"
+        class="form-control"
+        id="message"
+        formControlName="message"
+        placeholder="Write your message here..."
+        style="height: 300px"
+        (input)="updateMessageCount($event)"
+      ></textarea>
+      <span
+        class="error-message"
+        *ngIf="
+          contactUsForm.get('message')?.invalid &&
+          contactUsForm.get('message')?.touched
+        "
+        >{{contactUsForm.get('message')?.errors?.['required'] ? 'This field is required' : 'The limit is 500 characters'}}</span
+      >
+    </div>
+    <div class="col-12 mb-3">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="newsletter"
+          formControlName="newsletter"
+        />
+        <label class="form-check-label" for="newsletter">
+          Subscribe to newsletter
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button
+        type="submit"
+        class="btn btn-dark"
+        [disabled]="contactUsForm.invalid"
+      >
+        SEND
+      </button>
+    </div>
+  </form>
+</section>
+<section class="submited-form" *ngIf="formSubmited">
+  <h2>Thanks for your message! We will reply in 24 hours..</h2>
+  <img
+    class="green-tick"
+    src="/assets/images/icons/green-tick.png"
+    alt="Form success"
+    height="200px"
+  />
+  <p>
+    You will be redirected home in
+    <strong>{{ secondsLeft }} </strong> seconds...
+  </p>
+</section>

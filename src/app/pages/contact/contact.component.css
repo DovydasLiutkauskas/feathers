@@ -1,0 +1,60 @@
+.contact {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 3rem;
+}
+
+form {
+  border: 1px solid #505050;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+#newsletter {
+  filter: grayscale(1);
+}
+
+.error-message {
+  font-size: 12px;
+  color: red;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+.characters-tracker {
+  font-size: 12px;
+  color: #505050;
+  margin-left: 1rem;
+}
+
+.max-length-error {
+  color: red;
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
+.submited-form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.green-tick {
+  margin: 2rem;
+}

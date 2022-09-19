@@ -32,6 +32,8 @@ import { ProductDisplayComponent } from './shared/components/product-display/pro
 import { SummerSaleComponent } from './pages/summer-sale/summer-sale.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PageHeaderComponent } from './shared/components/page-header/page-header.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -64,8 +66,14 @@ import { PageHeaderComponent } from './shared/components/page-header/page-header
     SummerSaleComponent,
     AboutUsComponent,
     PageHeaderComponent,
+    ContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
