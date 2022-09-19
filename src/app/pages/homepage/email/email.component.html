@@ -4,16 +4,39 @@
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
   </p>
-  <div class="input-group mb-5 email-input-group">
-    <input
-      type="text"
-      class="form-control email-input"
-      placeholder="email address"
-      aria-label="Recipient's username"
-      aria-describedby="button-addon2"
-    />
-    <button class="btn btn-dark" type="button" id="button-addon2">
-      SUBSCRIBE
-    </button>
+  <form
+    #newsletterForm="ngForm"
+    (ngSubmit)="onSubmit(newsletterForm)"
+    *ngIf="!emailSubmitted"
+  >
+    <div class="input-group email-input-group">
+      <input
+        ngModel
+        type="email"
+        class="form-control email-input"
+        placeholder="email address"
+        name="email"
+        aria-describedby="button-addon2"
+        required
+        email
+      />
+
+      <button
+        class="btn btn-dark"
+        type="submit"
+        id="button-addon2"
+        [disabled]="newsletterForm.invalid"
+      >
+        SUBSCRIBE
+      </button>
+    </div>
+    <span
+      class="error-message"
+      *ngIf="newsletterForm.invalid && newsletterForm.touched"
+      >Please enter valid email</span
+    >
+  </form>
+  <div class="after-submit" *ngIf="emailSubmitted">
+    <p>Newsletter subscribed succesfully!</p>
   </div>
 </section>

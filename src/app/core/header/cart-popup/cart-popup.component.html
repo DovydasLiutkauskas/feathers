@@ -30,7 +30,9 @@
           <p class="price" [ngClass]="{ 'old-price': cartItem.item.salePrice }">
             ${{ cartItem.item.price }}
           </p>
-          <p class="sale-price">${{ cartItem.item.salePrice }}</p>
+          <p class="sale-price" *ngIf="cartItem.item.salePrice">
+            ${{ cartItem.item.salePrice }}
+          </p>
         </div>
       </div>
     </div>

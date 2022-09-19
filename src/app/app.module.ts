@@ -33,7 +33,7 @@ import { SummerSaleComponent } from './pages/summer-sale/summer-sale.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PageHeaderComponent } from './shared/components/page-header/page-header.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -73,6 +73,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

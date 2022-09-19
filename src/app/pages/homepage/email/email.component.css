@@ -8,7 +8,7 @@
   background-size: cover;
   background-position: center;
   padding-top: 110px;
-  padding-bottom: 80px;
+  padding-bottom: 110px;
 }
 
 .title {
@@ -29,4 +29,18 @@
 
 .email-input {
   border-radius: 0;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+.after-submit {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
