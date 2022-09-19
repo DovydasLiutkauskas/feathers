@@ -24,22 +24,19 @@
   </article>
   <article class="text-section">
     <p class="text" *ngIf="currentSection === 'DESCRIPTION'">
-      <b> SOME DESCRIPTION BLABLABLABLABLALBABA</b> Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Deserunt ut quibusdam enim fugit natus
-      cumque soluta nobis omnis animi suscipit? Soluta harum dolorum explicabo
-      laudantium sequi qui nesciunt, velit voluptate!
+      <b> PRODUCT DESCRIPTION </b>
+      <br />
+      {{ product?.description || defaultText }}
     </p>
     <p class="text" *ngIf="currentSection === 'ADDITIONAL INFORMATION'">
-      <b>SOME ADDITIONAL INFORMATION BLABLABLABLABLABA</b> Lorem ipsum dolor sit
-      amet consectetur adipisicing elit. Deserunt ut quibusdam enim fugit natus
-      cumque soluta nobis omnis animi suscipit? Soluta harum dolorum explicabo
-      laudantium sequi qui nesciunt, velit voluptate!
+      <b> ADDITIONAL INFORMATION </b>
+      <br />
+      {{ product?.['additional-information'] || defaultText }}
     </p>
     <p class="text" *ngIf="currentSection === 'MATERIAL'">
-      <b>SOME MATERIAL BALBALBALBLALB </b> Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Deserunt ut quibusdam enim fugit natus
-      cumque soluta nobis omnis animi suscipit? Soluta harum dolorum explicabo
-      laudantium sequi qui nesciunt, velit voluptate!
+      <b> MATERIAL </b>
+      <br />
+      {{ product?.material || defaultText }}
     </p>
   </article>
 </section>

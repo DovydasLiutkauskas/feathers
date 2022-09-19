@@ -5,6 +5,9 @@ export interface CollectionItem {
   id: number;
   category: string;
   salePrice?: number;
+  description?: string;
+  'additional-information'?: string;
+  material?: string;
 }
 
 export interface CategoryModel {
