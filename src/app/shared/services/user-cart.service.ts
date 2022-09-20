@@ -6,13 +6,13 @@ import { CartItem, CollectionItem } from '../data/data.model';
   providedIn: 'root',
 })
 export class CartService {
-  itemsInCart: CartItem[] = [];
+  private itemsInCart: CartItem[] = [];
 
   updatedQuantity$ = new BehaviorSubject(this.getTotalQuantity());
 
   updatedItemsInCart$ = new Subject<CartItem[]>();
 
-  totalCartSum$ = new BehaviorSubject<number>(0);
+  public totalCartSum$ = new BehaviorSubject<number>(0);
 
   constructor() {
     if (localStorage.getItem('cart')) {
@@ -22,7 +22,7 @@ export class CartService {
 
   addItemToCart(item: CollectionItem, qty: number) {
     const itemExist = this.itemsInCart.findIndex(
-      (cartItem: CartItem) => cartItem.item.name === item.name
+      (cartItem: CartItem) => cartItem.item.id === item.id
     );
     if (itemExist !== -1) {
       this.itemsInCart[itemExist].quantity += qty;
@@ -30,11 +30,7 @@ export class CartService {
       this.itemsInCart.push({ item, quantity: qty });
     }
 
-    localStorage.setItem('cart', JSON.stringify(this.itemsInCart));
-    this.updatedItemsInCart$.next(this.itemsInCart);
-
-    this.updateQuantityInCart();
-    this.getTotalCartPrice();
+    this.updateCartData();
   }
 
   deleteItemInCart(id: number) {
@@ -42,19 +38,15 @@ export class CartService {
       (cartItem: CartItem) => cartItem.item.id !== id
     );
 
-    localStorage.setItem('cart', JSON.stringify(this.itemsInCart));
-
-    this.updatedItemsInCart$.next(this.itemsInCart);
-    this.updateQuantityInCart();
-    this.getTotalCartPrice();
+    this.updateCartData();
   }
 
-  getItemsInCart() {
+  getItemsInCart(): CartItem[] {
     this.getTotalCartPrice();
     return this.itemsInCart.slice();
   }
 
-  getTotalQuantity(): number | null {
+  private getTotalQuantity(): number | null {
     if (!localStorage.getItem('cart')) return null;
     const addedItems = JSON.parse(localStorage.getItem('cart')!);
     const totalQty = addedItems.reduce((prevVal: number, currVal: CartItem) => {
@@ -63,11 +55,11 @@ export class CartService {
     return totalQty;
   }
 
-  updateQuantityInCart() {
+  private updateQuantityInCart(): void {
     this.updatedQuantity$.next(this.getTotalQuantity());
   }
 
-  getTotalCartPrice() {
+  private getTotalCartPrice(): void {
     const totalPrice = this.itemsInCart.reduce(
       (prevValue: number, currValue: CartItem) => {
         const price = currValue.item.salePrice || currValue.item.price;
@@ -76,5 +68,23 @@ export class CartService {
       0
     );
     this.totalCartSum$.next(totalPrice);
+  }
+
+  updateItemQuantity(id: number, qty: number): void {
+    const itemToChange = this.itemsInCart.findIndex(
+      (cartItem) => cartItem.item.id === id
+    );
+
+    if (itemToChange !== -1) {
+      this.itemsInCart[itemToChange].quantity = qty;
+      this.updateCartData();
+    }
+  }
+
+  private updateCartData(): void {
+    localStorage.setItem('cart', JSON.stringify(this.itemsInCart));
+    this.updatedItemsInCart$.next(this.itemsInCart);
+    this.updateQuantityInCart();
+    this.getTotalCartPrice();
   }
 }

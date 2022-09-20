@@ -34,6 +34,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PageHeaderComponent } from './shared/components/page-header/page-header.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartProductComponent } from './shop/components/cart/cart-product/cart-product.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutUsComponent,
     PageHeaderComponent,
     ContactComponent,
+    CartProductComponent,
   ],
   imports: [
     BrowserModule,

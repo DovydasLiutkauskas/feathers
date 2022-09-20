@@ -1,6 +1,5 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription, Observable } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
@@ -17,7 +16,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   currentItem$$!: Subscription;
   currentItem!: CollectionItem;
   showModal$!: Observable<boolean>;
-  qtyForm!: FormGroup;
+  options: number[];
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +24,9 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     private location: Location,
     private cartService: CartService,
     private backgroundSerivce: BackgroundImageService
-  ) {}
+  ) {
+    this.options = new Array(20).fill(0).map((_, i) => i + 1);
+  }
 
   ngOnInit(): void {
     this.backgroundSerivce.changeBackgroundImage('product-page');
@@ -37,14 +38,6 @@ export class ProductPageComponent implements OnInit, OnDestroy {
         params['category'],
         params['id']
       );
-    });
-
-    this.qtyForm = new FormGroup({
-      quantity: new FormControl(1, [
-        Validators.required,
-        Validators.min(1),
-        Validators.pattern('^(0|[1-9][0-9]*)$'),
-      ]),
     });
   }
 

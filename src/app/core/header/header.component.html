@@ -81,9 +81,12 @@
           <button class="btn btn-dark join-btn" (click)="onAnimate()">
             <span class="btn-text">CART</span>
             <img src="./assets/images/cart.svg" alt="Shopping cart" />
-            <span class="cart-qty" *ngIf="cartQuantity$ | async">{{
-              cartQuantity$ | async
-            }}</span>
+            <span
+              class="cart-qty"
+              [ngClass]="{ 'second-digit': (cartQuantity$ | async)! > 9 }"
+              *ngIf="cartQuantity$ | async"
+              >{{ cartQuantity$ | async }}</span
+            >
           </button>
         </div>
       </div>

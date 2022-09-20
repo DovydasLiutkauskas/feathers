@@ -1,0 +1,49 @@
+<div class="product-overview">
+  <app-sales-percentage
+    *ngIf="cartItem.item.salePrice"
+    [saleItem]="cartItem.item"
+  ></app-sales-percentage>
+  <img
+    class="product-img"
+    [src]="cartItem.item.imgPath"
+    [alt]="cartItem.item.name"
+    [routerLink]="[
+      '/',
+      'collections',
+      cartItem.item.category,
+      cartItem.item.name
+    ]"
+  />
+  <div class="product-info">
+    <div class="product-description">
+      <div class="title-quantity">
+        <h6 class="title">{{ cartItem.item.name }} x</h6>
+        <select
+          name="selectQuantity"
+          [id]="cartItem.item.id"
+          class="qty-input"
+          (change)="onQuantityChange($event.target)"
+        >
+          <option
+            *ngFor="let number of numbers"
+            [value]="number"
+            [selected]="number === cartItem.quantity"
+          >
+            {{ number }}
+          </option>
+        </select>
+      </div>
+
+      <p class="description">
+        At erat pellenttesque adipiscing potiko et commodo. Ut porttitor leo a
+        diam lokinari sollicitudin tempor ut gartenzi og travio...
+      </p>
+    </div>
+    <p class="product-price">
+      ${{ cartItem.item.salePrice || cartItem.item.price }}
+    </p>
+    <span class="delete-icon" (click)="deleteItem(cartItem.item.id)"
+      ><img src="/assets/images/icons/trashcan.svg" alt="Delete item"
+    /></span>
+  </div>
+</div>
