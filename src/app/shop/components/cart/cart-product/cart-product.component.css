@@ -61,24 +61,6 @@
   text-align: center;
 }
 
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.error-msg {
-  font-size: 12px;
-  color: red;
-}
-
-input.ng-invalid.ng-touched {
-  border: 2px solid red;
-}
-
 .title-quantity {
   display: flex;
   align-items: center;

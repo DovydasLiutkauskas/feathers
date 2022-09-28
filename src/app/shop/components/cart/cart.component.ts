@@ -45,10 +45,6 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   }
 
-  goBack() {
-    this.location.back();
-  }
-
   ngOnDestroy() {
     this.updateItemsInCart$$.unsubscribe();
   }
