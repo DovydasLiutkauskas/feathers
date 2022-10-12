@@ -9,6 +9,7 @@ import { CartComponent } from './shop/components/cart/cart.component';
 import { SummerSaleComponent } from './pages/summer-sale/summer-sale.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -39,6 +40,7 @@ const routes: Routes = [
       },
     ],
   },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

@@ -43,6 +43,7 @@ export default class ClickOutsideDirective implements AfterViewInit, OnDestroy {
       this.element.nativeElement.contains(elementToCheck)
     );
   }
+  
   ngOnDestroy(): void {
     this.documentClick$$.unsubscribe();
   }
