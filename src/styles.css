@@ -6,6 +6,7 @@
 html {
   scroll-behavior: auto !important;
 }
+
 /* STYLES FOR IMAGE CAPTION HOVERING EFFECT */
 .img-container {
   position: relative;
@@ -63,4 +64,17 @@ html {
 .price-container {
   display: flex;
   justify-content: center;
+}
+
+/* STYLES FOR MAX PAGE WIDTH */
+.page-width-sm {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-width-l {
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -22,3 +22,58 @@
 .description {
   padding: 20px 0;
 }
+
+@media only screen and (max-width: 1400px) {
+  .hide-img-l {
+    display: none;
+  }
+
+  .collection-preview {
+    flex-direction: column;
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .collection-subcontainer {
+    flex-direction: column;
+  }
+
+  .hide-img-sm {
+    display: none;
+  }
+  .collection-description {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 2rem;
+  }
+
+  .background-img:before {
+    content: "  ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.3;
+    border-radius: 12px;
+  }
+  .couch::before {
+    background-image: url(/assets/images/collection/2-coach.png);
+  }
+
+  .plant:before {
+    background-image: url(/assets/images/collection/3-plant.png);
+  }
+
+  .chairs:before {
+    background-image: url(/assets/images/collection/4-chairs.png);
+  }
+}
