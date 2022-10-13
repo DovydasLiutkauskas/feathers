@@ -1,8 +1,10 @@
-<h3>RELATED PRODUCTS</h3>
-<section class="related-products">
-  <app-product-display
-    *ngFor="let item of relatedProducts$ | async"
-    [currentItem]="item"
-    [routLink]="['/', 'collections', item.category, item.name]"
-  ></app-product-display>
-</section>
+<div class="related-main page-width-sm">
+  <h3>RELATED PRODUCTS</h3>
+  <section class="related-products">
+    <app-product-display
+      *ngFor="let item of relatedProducts$ | async"
+      [currentItem]="item"
+      [routLink]="['/', 'collections', item.category, item.name]"
+    ></app-product-display>
+  </section>
+</div>

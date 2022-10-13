@@ -13,7 +13,6 @@
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
 }
 
 .modal-window {
@@ -89,4 +88,50 @@
 
 .savings-info > span {
   color: #c60134;
+}
+
+@media only screen and (max-width: 1500px) {
+  .modal-window {
+    min-width: 750px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .modal-window {
+    min-width: auto;
+    width: 100%;
+  }
+  .addToCart-modal {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .modal-window {
+    flex-direction: column;
+    min-width: 330px;
+  }
+  .addToCart-modal {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .left-side,
+  .right-side {
+    width: 100%;
+  }
+
+  .left-side {
+    border: none;
+  }
+
+  .product-img {
+    width: 100px;
+    height: auto;
+  }
+
+  .modal-window {
+    padding: 10px 20px;
+  }
 }

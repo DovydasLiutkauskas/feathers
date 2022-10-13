@@ -123,3 +123,27 @@
   flex-direction: column;
   margin-bottom: 2rem;
 }
+
+@media only screen and (max-width: 800px) {
+  .main-section {
+    flex-direction: column-reverse;
+    position: relative;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .right-section {
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

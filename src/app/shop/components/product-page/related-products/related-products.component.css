@@ -11,3 +11,13 @@ h3 {
   flex-wrap: wrap;
   text-align: center;
 }
+
+@media only screen and (max-width: 770px) {
+  .related-products {
+    justify-content: center;
+  }
+
+  .related-main {
+    text-align: center;
+  }
+}
