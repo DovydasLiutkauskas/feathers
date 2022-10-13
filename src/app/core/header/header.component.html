@@ -1,4 +1,25 @@
 <header class="page-width-l">
+  <div
+    class="right-nav"
+    role="search"
+    clickOutside
+    (clickOutside)="clickedOutsideCart()"
+  >
+    <app-cart-popup [state]="cartState"></app-cart-popup>
+    <div class="glass">
+      <img src="./assets/images/magnyfing.svg" alt="Shopping cart" />
+    </div>
+    <button class="btn btn-dark join-btn" (click)="onAnimate()">
+      <span class="btn-text">CART</span>
+      <img src="./assets/images/cart.svg" alt="Shopping cart" />
+      <span
+        class="cart-qty"
+        [ngClass]="{ 'second-digit': (cartQuantity$ | async)! > 9 }"
+        *ngIf="cartQuantity$ | async"
+        >{{ cartQuantity$ | async }}</span
+      >
+    </button>
+  </div>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <button
@@ -9,11 +30,18 @@
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        (click)="onNavToggleClick()"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarNav"
+        #navbarMenu
+        clickOutside
+        (clickOutside)="clickedOutsideNav()"
+      >
+        <ul class="navbar-nav dropdown-nav">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="home"
               >HOME</a
@@ -68,27 +96,6 @@
             >
           </li>
         </ul>
-        <div
-          class="right-nav"
-          role="search"
-          clickOutside
-          (clickOutside)="clickedOutsideCart()"
-        >
-          <app-cart-popup [state]="cartState"></app-cart-popup>
-          <div class="glass">
-            <img src="./assets/images/magnyfing.svg" alt="Shopping cart" />
-          </div>
-          <button class="btn btn-dark join-btn" (click)="onAnimate()">
-            <span class="btn-text">CART</span>
-            <img src="./assets/images/cart.svg" alt="Shopping cart" />
-            <span
-              class="cart-qty"
-              [ngClass]="{ 'second-digit': (cartQuantity$ | async)! > 9 }"
-              *ngIf="cartQuantity$ | async"
-              >{{ cartQuantity$ | async }}</span
-            >
-          </button>
-        </div>
       </div>
     </div>
   </nav>

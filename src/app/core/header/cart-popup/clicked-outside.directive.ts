@@ -38,12 +38,17 @@ export default class ClickOutsideDirective implements AfterViewInit, OnDestroy {
     if (elementToCheck.classList.contains('product-img')) return false;
     if (elementToCheck.classList.contains('trashcan-img')) return true;
     if (elementToCheck.classList.contains('dropdown-item')) return false;
+    if (elementToCheck.classList.contains('navbar-toggler')) return true;
+    if (elementToCheck.classList.contains('navbar-toggler-icon')) return true;
+    if (elementToCheck.classList.contains('nav-link')) return false;
+    if (elementToCheck.classList.contains('navbar-collapse')) return false;
+
     return (
       elementToCheck === this.element.nativeElement ||
       this.element.nativeElement.contains(elementToCheck)
     );
   }
-  
+
   ngOnDestroy(): void {
     this.documentClick$$.unsubscribe();
   }

@@ -9,6 +9,8 @@ import { CartService } from 'src/app/shared/services/user-cart.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('navbarMenu') navbarMenu: ElementRef | undefined;
+
   cartState = 'hidden';
 
   @ViewChild('dropdown') dropdownEl!: ElementRef;
@@ -45,5 +47,13 @@ export class HeaderComponent implements OnInit {
 
   clickOutsideShop(): void {
     this.dropdownEl.nativeElement.nextElementSibling.classList.remove('show');
+  }
+
+  onNavToggleClick() {
+    this.navbarMenu?.nativeElement.classList.add('show');
+  }
+
+  clickedOutsideNav(): void {
+    this.navbarMenu?.nativeElement.classList.remove('show');
   }
 }

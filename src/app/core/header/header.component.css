@@ -55,6 +55,7 @@ nav {
   display: flex;
   position: absolute;
   right: 110px;
+  z-index: 1;
 }
 
 .btn-text {
@@ -70,4 +71,26 @@ nav {
 
 .second-digit {
   right: 20px;
+}
+
+@media only screen and (max-width: 1250px) {
+  .nav-link {
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+  .right-nav {
+    right: 50px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .dropdown-nav {
+    margin-top: 100px;
+    width: 200px;
+    background-color: rgb(255, 255, 255, 0.8);
+    border-radius: 6px;
+    padding: 1rem;
+  }
 }
