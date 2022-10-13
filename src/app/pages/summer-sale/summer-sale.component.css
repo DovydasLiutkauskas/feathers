@@ -29,6 +29,7 @@
 .sale-products {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .no-products > h3 {

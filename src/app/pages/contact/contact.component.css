@@ -13,6 +13,7 @@ form {
   border: 1px solid #505050;
   border-radius: 12px;
   padding: 1rem;
+  width: 75%;
 }
 
 #newsletter {
@@ -57,4 +58,16 @@ textarea.ng-invalid.ng-touched {
 
 .green-tick {
   margin: 2rem;
+}
+
+@media only screen and (max-width: 650px) {
+  form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  form {
+    width: 100%;
+  }
 }

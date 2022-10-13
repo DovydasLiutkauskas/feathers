@@ -1,11 +1,7 @@
 <app-page-header></app-page-header>
-<section class="contact" *ngIf="!formSubmited">
+<section class="contact page-width-sm" *ngIf="!formSubmited">
   <h3 class="title">Please fill the from below</h3>
-  <form
-    class="row g-3 w-75"
-    [formGroup]="contactUsForm"
-    (ngSubmit)="onSubmit()"
-  >
+  <form class="row g-3" [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
     <span
       class="form-error"
       *ngIf="contactUsForm.invalid && contactUsForm.touched"
