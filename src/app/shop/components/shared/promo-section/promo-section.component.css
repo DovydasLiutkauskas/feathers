@@ -1,3 +1,9 @@
+.latest-products {
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas:
@@ -34,4 +40,21 @@
 img {
   width: 100%;
   height: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .latest-1,
+  .latest-2,
+  .latest-4 {
+    display: none;
+  }
+
+  .grid-container {
+    grid-template-areas:
+      "text"
+      "img-3";
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

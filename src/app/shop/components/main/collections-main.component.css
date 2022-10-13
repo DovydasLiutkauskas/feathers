@@ -12,3 +12,9 @@
   margin-bottom: 50px;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 1200px) {
+  .category-products {
+    flex-wrap: wrap;
+  }
+}

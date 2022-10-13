@@ -1,5 +1,8 @@
 <app-promo-section></app-promo-section>
-<section class="category" *ngFor="let collection of colletionList | keyvalue">
+<section
+  class="category page-width-sm"
+  *ngFor="let collection of colletionList | keyvalue"
+>
   <h2 class="title">{{ collection.key | uppercase }}</h2>
   <div class="category-products">
     <app-product-display

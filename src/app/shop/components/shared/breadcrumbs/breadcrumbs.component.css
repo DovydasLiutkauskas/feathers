@@ -30,3 +30,15 @@
 .active {
   color: black;
 }
+
+@media only screen and (max-width: 800px) {
+  .breadcrumbs {
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .breadcrumbs {
+    padding-left: 10px;
+  }
+}
