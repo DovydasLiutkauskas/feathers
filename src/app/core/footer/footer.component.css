@@ -21,10 +21,6 @@ h4 {
   flex-direction: column;
 }
 
-.directions {
-  margin-top: 2rem;
-}
-
 .directions > p {
   margin-bottom: 0.5rem;
 }
@@ -42,4 +38,27 @@ p {
 .copyright {
   text-align: center;
   padding: 80px 0;
+}
+
+@media only screen and (max-width: 900px) {
+  .first-par {
+    max-width: 300px;
+  }
+
+  .footer-collumn {
+    width: fit-content;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .footer {
+    flex-direction: column;
+    padding-left: 5rem;
+    gap: 2rem;
+  }
 }
