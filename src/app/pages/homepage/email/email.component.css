@@ -44,3 +44,19 @@ input.ng-invalid.ng-touched {
   font-weight: bold;
   font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 500px) {
+  .email {
+    background-position: left;
+  }
+
+  .email-input {
+    width: 100%;
+  }
+
+  .email-input-group {
+    flex-direction: column;
+    width: 100%;
+    min-width: 300px;
+  }
+}
