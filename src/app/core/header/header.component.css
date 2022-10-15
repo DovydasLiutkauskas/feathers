@@ -39,12 +39,14 @@ nav {
 .join-btn {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .glass {
   display: flex;
   align-items: center;
   margin-right: 25px;
+  cursor: pointer;
 }
 
 .navbar-collapse {
@@ -53,6 +55,7 @@ nav {
 
 .right-nav {
   display: flex;
+  align-items: center;
   position: absolute;
   right: 110px;
   z-index: 1;
@@ -71,6 +74,28 @@ nav {
 
 .second-digit {
   right: 20px;
+}
+
+.search-input {
+  display: block;
+  max-width: 0;
+  transition: all 0.5s ease;
+  opacity: 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.show {
+  max-width: 150px;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 1530px) {
+  .glass-move {
+    margin-top: 100px;
+  }
 }
 
 @media only screen and (max-width: 1250px) {
@@ -92,5 +117,9 @@ nav {
     background-color: rgb(255, 255, 255, 0.8);
     border-radius: 6px;
     padding: 1rem;
+  }
+
+  .glass-move {
+    margin-top: 0;
   }
 }
