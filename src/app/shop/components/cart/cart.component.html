@@ -28,8 +28,34 @@
         </p>
       </div>
       <div class="table-bottom">
-        <p class="discount">Have a discount?</p>
-        <p class="discount">Have a e-coupon code?</p>
+        <div class="dicount-group">
+          <input
+            class="discount-input"
+            placeholder="Have a discount?"
+            type="text"
+            (focus)="onInputFocus(searchButton1)"
+            (blur)="onInputBlur(searchButton1)"
+          />
+          <button class="hide-search-button search-button" #searchButton1>
+            &rarr;
+          </button>
+        </div>
+
+        <!-- <p class="discount">Have a discount?</p> -->
+        <!-- <p class="discount">Have a e-coupon code?</p> -->
+        <div class="discount-group">
+          <input
+            class="discount-input"
+            placeholder="Have a e-coupon code?"
+            type="text"
+            (focus)="onInputFocus(searchButton2)"
+            (blur)="onInputBlur(searchButton2)"
+          />
+          <button class="hide-search-button search-button" #searchButton2>
+            &rarr;
+          </button>
+        </div>
+
         <button class="btn btn-dark btn-buy">BUY</button>
       </div>
     </article>

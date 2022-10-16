@@ -52,7 +52,7 @@
 }
 
 .qty-input {
-  width: 50px;
+  width: fit-content;
   border: none;
   border-bottom: 2px solid black;
   margin-left: 1rem;

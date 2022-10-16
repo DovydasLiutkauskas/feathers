@@ -57,17 +57,15 @@ export class HeaderComponent implements OnInit {
     this.navbarMenu?.nativeElement.classList.remove('show');
   }
 
-  showSearchInput(input: HTMLInputElement, div: HTMLDivElement) {
-    input.classList.add('show');
-    div.classList.add('glass-move');
+  showSearchInput(input: HTMLInputElement) {
+    input.classList.add('show-search-input');
     input.focus();
     (function inputTimer() {
       setTimeout(() => {
         if (input === document.activeElement) {
           inputTimer();
         } else {
-          input.classList.remove('show');
-          div.classList.remove('glass-move');
+          input.classList.remove('show-search-input');
         }
       }, 5000);
     })();

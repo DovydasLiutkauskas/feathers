@@ -45,6 +45,14 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   }
 
+  onInputFocus(button: HTMLButtonElement) {
+    button.classList.remove('hide-search-button');
+  }
+
+  onInputBlur(button: HTMLButtonElement) {
+    button.classList.add('hide-search-button');
+  }
+
   ngOnDestroy() {
     this.updateItemsInCart$$.unsubscribe();
   }

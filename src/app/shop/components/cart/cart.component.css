@@ -56,11 +56,11 @@
   margin-bottom: 1rem;
 }
 
-.discount {
+/* .discount {
   font-weight: bold;
   color: #505050;
   font-size: 20px;
-}
+} */
 
 .cart-empty {
   display: flex;
@@ -72,6 +72,45 @@
   width: 100px;
   height: auto;
   padding: 3rem 0;
+}
+
+.discount-input {
+  border: none;
+  padding: 0;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  min-width: 285px;
+  font-weight: bold;
+  color: #505050;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.discount-input::placeholder {
+  font-weight: bold;
+  color: #505050;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.discount-input:focus {
+  border-bottom: 1px solid black;
+}
+
+.hide-search-button {
+  display: none;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+}
+
+.search-button:hover {
+  color: red;
 }
 
 @media only screen and (max-width: 1000px) {

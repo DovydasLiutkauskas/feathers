@@ -85,11 +85,11 @@
     (clickOutside)="clickedOutsideCart()"
   >
     <app-cart-popup [state]="cartState"></app-cart-popup>
-    <div class="glass" #glassDiv>
+    <div class="glass">
       <img
         src="./assets/images/magnyfing.svg"
         alt="Search items"
-        (click)="showSearchInput(searchInput, glassDiv)"
+        (click)="showSearchInput(searchInput)"
       />
       <input type="text" class="search-input" #searchInput focus />
     </div>
