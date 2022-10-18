@@ -11,7 +11,10 @@ export default class PageNamePipe implements PipeTransform {
       if (splitValue[0] === 'collections') return 'SHOP';
       return splitValue[0].split('-').join(' ').toUpperCase();
     }
-    if (splitValue.length === 3) return 'PRODUCT DETAIL';
+    if (splitValue.length === 3) {
+      if (splitValue[1] === 'search') return 'SEARCH RESULTS';
+      else return 'PRODUCT DETAIL';
+    }
     return splitValue[1].toUpperCase();
   }
 }

@@ -10,6 +10,7 @@ import { SummerSaleComponent } from './pages/summer-sale/summer-sale.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SearchResultsComponent } from './shop/components/search/search.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: ':category',
         component: CollectionsCategoriesComponent,
+      },
+      {
+        path: 'search/:query',
+        component: SearchResultsComponent,
       },
       {
         path: ':category/:id',

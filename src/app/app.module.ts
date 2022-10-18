@@ -36,6 +36,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartProductComponent } from './shop/components/cart/cart-product/cart-product.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SearchResultsComponent } from './shop/components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ContactComponent,
     CartProductComponent,
     NotFoundComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,

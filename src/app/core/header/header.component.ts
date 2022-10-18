@@ -1,6 +1,12 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  Observable,
+  Subject,
+} from 'rxjs';
 import { CartService } from 'src/app/shared/services/user-cart.service';
 
 @Component({
@@ -17,10 +23,26 @@ export class HeaderComponent implements OnInit {
 
   cartQuantity$!: Observable<number | null>;
 
+  private keyUp = new Subject<string>();
+
   constructor(private router: Router, private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartQuantity$ = this.cartService.updatedQuantity$;
+
+    this.keyUp
+      .pipe(
+        debounceTime(1000),
+        distinctUntilChanged(),
+        filter((text) => text.length > 2)
+      )
+      .subscribe((value) =>
+        this.router.navigate([`/collections/search/${value}`])
+      );
+  }
+
+  onSearchType(value: string): void {
+    this.keyUp.next(value);
   }
 
   shopDropdown(element: HTMLAnchorElement) {

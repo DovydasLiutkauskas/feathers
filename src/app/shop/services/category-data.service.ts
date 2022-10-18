@@ -22,4 +22,14 @@ export class CategoryDataService {
     }
     return promoProducts;
   }
+
+  getSearchResults(query: string): CollectionItem[] | null {
+    const searchResults: CollectionItem[] = [];
+    for (let [key, _] of Object.entries(collections)) {
+      collections[key].items.forEach((item: CollectionItem) =>
+        item.name.includes(query) ? searchResults.push(item) : null
+      );
+    }
+    return searchResults;
+  }
 }
