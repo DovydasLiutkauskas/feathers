@@ -1,4 +1,11 @@
-.search-results-main {
+.page-title {
   text-align: center;
-  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.products-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
 }

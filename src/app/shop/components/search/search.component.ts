@@ -15,6 +15,8 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
 
   searchResults: CollectionItem[] | undefined | null;
 
+  query: string = '';
+
   constructor(
     private backgroundImageService: BackgroundImageService,
     private route: ActivatedRoute,
@@ -29,7 +31,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
         this.searchResults = this.categoryService.getSearchResults(
           response['query']
         );
-        console.log(this.searchResults);
+        this.query = response['query'];
       }
     );
   }

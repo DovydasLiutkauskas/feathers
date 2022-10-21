@@ -1,5 +1,8 @@
 <div class="product">
-  <div class="img-container" [routerLink]="routLink">
+  <div
+    class="img-container"
+    [routerLink]="['/', 'collections', currentItem.category, currentItem.name]"
+  >
     <img
       [src]="currentItem.imgPath"
       [alt]="currentItem.name"

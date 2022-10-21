@@ -1,5 +1,18 @@
-<app-promo-section></app-promo-section>
-<section class="search-results-main">
-  <h1>Search results for: <b>smth</b></h1>
-  <h1 *ngFor="let item of this.searchResults">1123</h1>
+<section class="search-results-main page-width-sm">
+  <article class="found-results-container" *ngIf="searchResults?.length">
+    <h1 class="page-title">
+      Search results for: <b>{{ query }}</b>
+    </h1>
+    <div class="products-container">
+      <app-product-display
+        *ngFor="let item of searchResults"
+        [currentItem]="item"
+      ></app-product-display>
+    </div>
+  </article>
+  <article class="not-found-container" *ngIf="!searchResults?.length">
+    <h1 class="page-title">
+      No results found for: <b>{{ query }}</b>
+    </h1>
+  </article>
 </section>
