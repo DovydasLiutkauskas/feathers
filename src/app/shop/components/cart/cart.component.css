@@ -113,6 +113,10 @@
   color: red;
 }
 
+.discount-error {
+  border-bottom: 1px solid red;
+}
+
 @media only screen and (max-width: 1000px) {
   .cart-main {
     flex-direction: column;

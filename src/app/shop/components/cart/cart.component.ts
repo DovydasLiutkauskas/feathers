@@ -49,8 +49,15 @@ export class CartComponent implements OnInit, OnDestroy {
     button.classList.remove('hide-search-button');
   }
 
-  onInputBlur(button: HTMLButtonElement) {
-    button.classList.add('hide-search-button');
+  onInputBlur(button: HTMLButtonElement, input: HTMLInputElement) {
+    if (!input.value) {
+      button.classList.add('hide-search-button');
+      input.classList.remove('discount-error');
+    }
+  }
+
+  onDiscountButtonClick(input: HTMLInputElement) {
+    input.classList.add('discount-error');
   }
 
   ngOnDestroy() {
