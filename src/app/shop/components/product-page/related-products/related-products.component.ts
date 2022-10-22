@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
 import { ProductPageService } from '../../../services/product-page.service';
 

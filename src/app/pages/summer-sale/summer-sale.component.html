@@ -5,7 +5,6 @@
     <app-product-display
       *ngFor="let item of saleProducts"
       [currentItem]="item"
-      [routLink]="['/', 'collections', item.category, item.name]"
     ></app-product-display>
   </article>
 </section>

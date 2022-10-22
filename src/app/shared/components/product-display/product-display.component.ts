@@ -6,11 +6,6 @@ import { CollectionItem } from '../../data/data.model';
   templateUrl: './product-display.component.html',
   styleUrls: ['./product-display.component.css'],
 })
-export class ProductDisplayComponent implements OnInit {
+export class ProductDisplayComponent {
   @Input() currentItem!: CollectionItem;
-  @Input() routLink!: string[] | string;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

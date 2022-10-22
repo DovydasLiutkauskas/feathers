@@ -8,7 +8,6 @@
     <app-product-display
       *ngFor="let item of collection.value.items | slice: 0:4"
       [currentItem]="item"
-      [routLink]="collection.key + '/' + item.name"
     ></app-product-display>
   </div>
   <button class="btn btn-dark" [routerLink]="collection.key">SEE ALL</button>
