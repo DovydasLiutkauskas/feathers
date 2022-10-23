@@ -1,7 +1,7 @@
 export interface CollectionItem {
   name: string;
   price: number;
-  imgPath: string;
+  images: Array<string>;
   id: number;
   category: string;
   salePrice?: number;

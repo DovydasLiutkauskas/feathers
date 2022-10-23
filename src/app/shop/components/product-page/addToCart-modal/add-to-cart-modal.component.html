@@ -2,7 +2,11 @@
 <section class="addToCart-modal">
   <article class="modal-window">
     <div class="left-side">
-      <img [src]="currentItem.imgPath" alt="" class="product-img" />
+      <img
+        [src]="currentItem.images[0]"
+        [alt]="currentItem.name"
+        class="product-img"
+      />
       <div class="product-info">
         <h4 class="product-name">{{ currentItem.name }}</h4>
         <p class="product-price">

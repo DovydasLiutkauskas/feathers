@@ -7,7 +7,7 @@
     <div class="product" *ngFor="let item of promoItemList | slice: 0:4">
       <div class="img-container">
         <img
-          [src]="item.imgPath"
+          [src]="item.images[0]"
           [alt]="item.name"
           [routerLink]="['/', 'collections', item.category, item.name]"
           class="product-img"

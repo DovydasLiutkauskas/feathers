@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule,
+} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +40,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartProductComponent } from './shop/components/cart/cart-product/cart-product.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SearchResultsComponent } from './shop/components/search/search.component';
+import { CheckoutComponent } from './shop/components/checkout/checkout.component';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 
 @NgModule({
   declarations: [
@@ -73,6 +78,7 @@ import { SearchResultsComponent } from './shop/components/search/search.componen
     CartProductComponent,
     NotFoundComponent,
     SearchResultsComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +86,7 @@ import { SearchResultsComponent } from './shop/components/search/search.componen
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    MdbCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
