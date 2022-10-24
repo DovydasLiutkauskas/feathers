@@ -10,40 +10,18 @@
         *ngIf="currentItem.salePrice"
         [saleItem]="currentItem"
       ></app-sales-percentage>
-      <mdb-carousel [controls]="currentItem.images.length > 1">
-        <mdb-carousel-item *ngFor="let image of currentItem.images">
-          <img [src]="image" class="main-img" [alt]="currentItem.name" />
-        </mdb-carousel-item>
-      </mdb-carousel>
+      <img class="main-img" [src]="selectedImage" [alt]="currentItem.name" />
 
-      <!-- <img
-        class="main-img"
-        [src]="currentItem.images[0]"
-        [alt]="currentItem.name"
-      /> -->
-
-      <!-- <div class="img-group">
+      <div class="img-group">
         <img
+          *ngFor="let image of currentItem.images"
           class="img-group_img"
-          [src]="currentItem.images[0]"
+          [src]="image"
           [alt]="currentItem.name"
+          [ngClass]="{ 'selected-img': this.selectedImage === image }"
+          (click)="changeMainImage(image)"
         />
-        <img
-          class="img-group_img"
-          [src]="currentItem.images[0]"
-          [alt]="currentItem.name"
-        />
-        <img
-          class="img-group_img"
-          [src]="currentItem.images[0]"
-          [alt]="currentItem.name"
-        />
-        <img
-          class="img-group_img"
-          [src]="currentItem.images[0]"
-          [alt]="currentItem.name"
-        />
-      </div> -->
+      </div>
     </article>
     <article class="right-section">
       <div class="back-section">

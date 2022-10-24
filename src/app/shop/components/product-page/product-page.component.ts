@@ -17,6 +17,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   currentItem!: CollectionItem;
   showModal$!: Observable<boolean>;
   options: number[];
+  selectedImage: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -39,6 +40,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
         params['id']
       );
     });
+
+    this.selectedImage = this.currentItem.images[0];
   }
 
   goBack() {
@@ -49,6 +52,10 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     this.cartService.addItemToCart(this.currentItem, qty);
 
     this.productService.openModal();
+  }
+
+  changeMainImage(imgSrc: string): void {
+    this.selectedImage = imgSrc;
   }
 
   ngOnDestroy() {

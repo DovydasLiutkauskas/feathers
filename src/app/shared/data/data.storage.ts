@@ -157,7 +157,7 @@ const rugItemsList = [
     price: 69,
     images: [
       '/assets/images/collections/rugs/rugs-1.png',
-      '/assets/images/collections/rugs/additonal-rug-1.jpg',
+      '/assets/images/collections/rugs/additional-rug.jpg',
     ],
     category: 'rugs',
     id: idCounter++,
