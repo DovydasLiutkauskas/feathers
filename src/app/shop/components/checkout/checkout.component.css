@@ -60,6 +60,16 @@ input.ng-invalid.ng-touched {
   color: white;
 }
 
+.btn-finish {
+  background-color: black;
+  color: white;
+}
+
+.order-success {
+  width: 100%;
+  text-align: center;
+}
+
 @keyframes goBackArrow {
   0% {
     left: 0;

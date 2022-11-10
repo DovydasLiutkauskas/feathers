@@ -40,6 +40,7 @@ import { SearchResultsComponent } from './shop/components/search/search.componen
 import { CheckoutComponent } from './shop/components/checkout/checkout.component';
 import { ShippingFormComponent } from './shop/components/checkout/shipping-form/shipping-form.component';
 import { PaymentFormComponent } from './shop/components/checkout/payment-form/payment-form.component';
+import { OrderSummaryComponent } from './shop/components/checkout/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { PaymentFormComponent } from './shop/components/checkout/payment-form/pa
     CheckoutComponent,
     ShippingFormComponent,
     PaymentFormComponent,
+    OrderSummaryComponent,
   ],
   imports: [
     BrowserModule,

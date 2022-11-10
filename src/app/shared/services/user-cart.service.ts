@@ -41,6 +41,10 @@ export class CartService {
     this.updateCartData();
   }
 
+  deleteAllItemsInCart() {
+    localStorage.removeItem('cart');
+  }
+
   getItemsInCart(): CartItem[] {
     this.getTotalCartPrice();
     return this.itemsInCart.slice();

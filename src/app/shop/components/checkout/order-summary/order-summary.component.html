@@ -1,0 +1,78 @@
+<div class="section-info">
+  <span
+    class="info-number"
+    [ngClass]="{
+      'active-info':
+        this.checkoutService.getDeliveryInfoSubmitted() &&
+        this.checkoutService.getPaymentInfoSubmitted()
+    }"
+    >3</span
+  >
+  <p>Order summary</p>
+</div>
+<section
+  class="order-summary-main"
+  *ngIf="
+    this.checkoutService.getDeliveryInfoSubmitted() &&
+    this.checkoutService.getPaymentInfoSubmitted()
+  "
+>
+  <table>
+    <thead>
+      <th>Image</th>
+      <th>Quantity</th>
+      <th>Product name</th>
+      <th>Item price</th>
+      <th>Total price</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cartItem of this.cartService.getItemsInCart()">
+        <td>
+          <img
+            [src]="cartItem.item.images[0]"
+            [alt]="cartItem.item.name"
+            class="product-img"
+          />
+        </td>
+        <td>
+          <p class="quantity">x {{ cartItem.quantity }}</p>
+        </td>
+        <td>
+          <p class="title">{{ cartItem.item.name }}</p>
+        </td>
+        <td>
+          <div class="price-container-2">
+            <p
+              class="price"
+              [ngClass]="{ 'old-price': cartItem.item.salePrice }"
+            >
+              {{ cartItem.item.price | currency }}
+            </p>
+            <p class="sale-price" *ngIf="cartItem.item.salePrice">
+              {{ cartItem.item.salePrice | currency }}
+            </p>
+          </div>
+        </td>
+        <td>
+          <p class="total-price">
+            {{
+              cartItem.quantity *
+                (cartItem.item.salePrice || cartItem.item.price) | currency
+            }}
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <article class="price-total-container">
+    <p>
+      Total items price:
+      <span class="price">{{ this.totalCartPrice | currency }}</span>
+    </p>
+    <p>Delivery: <span class="price">$30</span></p>
+    <p>
+      Total:
+      <span class="price">{{ 30 + this.totalCartPrice! | currency }}</span>
+    </p>
+  </article>
+</section>

@@ -1,16 +1,39 @@
 <section class="checkout-main page-width-sm">
-  <div class="back-section">
+  <article class="order-information" *ngIf="!orderSubmitted">
+    <div class="back-section">
+      <img
+        src="/assets/images/arrow.svg"
+        alt="go back"
+        height="15px"
+        class="arrow-back"
+        (click)="goBack()"
+      />
+      <p>Back to previous page</p>
+    </div>
+    <app-shipping-form></app-shipping-form>
+    <hr />
+    <app-payment-form></app-payment-form>
+    <hr />
+    <app-order-summary></app-order-summary>
+    <button
+      class="btn btn-finish"
+      *ngIf="informationSubmitted()"
+      (click)="submitOrder()"
+    >
+      Submit order
+    </button>
+  </article>
+  <article class="order-success" *ngIf="orderSubmitted">
+    <h2>Order #10032 was made succesfully!</h2>
     <img
-      src="/assets/images/arrow.svg"
-      alt="go back"
-      height="15px"
-      class="arrow-back"
-      (click)="goBack()"
+      class="green-tick"
+      src="/assets/images/icons/green-tick.png"
+      alt="Form success"
+      height="200px"
     />
-    <p>Back to previous page</p>
-  </div>
-  <app-shipping-form></app-shipping-form>
-  <hr />
-  <app-payment-form></app-payment-form>
-  <hr />
+    <p>
+      You will be redirected home in
+      <strong>{{ secondsLeft }} </strong> seconds...
+    </p>
+  </article>
 </section>

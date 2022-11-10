@@ -1,0 +1,32 @@
+.order-summary-main {
+  padding: 1rem;
+}
+
+.product-img {
+  height: auto;
+  width: 100px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+th {
+  min-width: 150px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.price-total-container {
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.price {
+  font-weight: bold;
+}
