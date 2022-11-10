@@ -1,0 +1,175 @@
+<div class="section-info">
+  <span
+    class="info-number"
+    [ngClass]="{
+      'active-info':
+        this.checkoutService.getDeliveryInfoSubmitted() &&
+        !this.checkoutService.getPaymentInfoSubmitted()
+    }"
+    >2</span
+  >
+
+  <p>Payment</p>
+  <p
+    class="change-payment-button"
+    *ngIf="this.checkoutService.getPaymentInfoSubmitted()"
+    (click)="this.checkoutService.changeInfoState('payment')"
+  >
+    CHANGE
+  </p>
+</div>
+<form
+  class="row"
+  [formGroup]="paymentInformationForm"
+  *ngIf="
+    this.checkoutService.getDeliveryInfoSubmitted() &&
+    !this.checkoutService.getPaymentInfoSubmitted()
+  "
+  (ngSubmit)="this.checkoutService.submitSectionInfo('payment')"
+>
+  <h3>Choose your Payment type</h3>
+  <div class="my-3">
+    <div class="form-check">
+      <input
+        id="credit"
+        name="cardType"
+        type="radio"
+        class="form-check-input"
+        value="credit"
+        formControlName="cardType"
+      />
+      <label class="form-check-label" for="credit">Credit card</label>
+    </div>
+    <div class="form-check">
+      <input
+        id="debit"
+        name="cardType"
+        type="radio"
+        class="form-check-input"
+        value="debit"
+        formControlName="cardType"
+      />
+      <label class="form-check-label" for="debit">Debit card</label>
+    </div>
+  </div>
+
+  <div class="row gy-3 mb-5">
+    <div class="col-md-6">
+      <label for="cc-name" class="form-label">Name on card</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cc-name"
+        formControlName="name"
+      />
+      <small class="text-muted">Full name as displayed on card</small>
+      <span
+        class="error-message"
+        *ngIf="
+          paymentInformationForm!.get('name')?.invalid &&
+          paymentInformationForm!.get('name')?.touched
+        "
+        >{{paymentInformationForm!.get('name')?.errors?.['required'] ? 'This field is required' : 'Please enter valid email'}}</span
+      >
+    </div>
+
+    <div class="col-md-6">
+      <label for="cc-number" class="form-label">Credit card number</label>
+      <input
+        type="number"
+        class="form-control"
+        id="cc-number"
+        formControlName="cardNumber"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          paymentInformationForm!.get('cardNumber')?.invalid &&
+          paymentInformationForm!.get('cardNumber')?.touched
+        "
+        >{{paymentInformationForm!.get('cardNumber')?.errors?.['required'] ? 'This field is required' : 'Please enter 15-16 digits number'}}</span
+      >
+    </div>
+
+    <div class="col-md-3">
+      <label for="cc-expiration" class="form-label">Expiration Date:</label>
+      <div class="col-md-3 expiration-div">
+        <input
+          type="number"
+          class="form-control expiration-input"
+          id="cc-expiration-year"
+          placeholder="yy"
+          formControlName="expirationYear"
+        />
+
+        <input
+          type="number"
+          class="form-control expiration-input"
+          id="cc-expiration-month"
+          placeholder="mm"
+          formControlName="expirationMonth"
+        />
+      </div>
+      <span
+        class="error-message"
+        *ngIf="
+          (paymentInformationForm!.get('expirationYear')?.invalid &&
+            paymentInformationForm!.get('expirationYear')?.touched) ||
+          (paymentInformationForm!.get('expirationMonth')?.invalid &&
+            paymentInformationForm!.get('expirationMonth')?.touched)
+        "
+        >Please enter 2 digits for expiration year and month</span
+      >
+    </div>
+
+    <div class="col-md-3">
+      <label for="cc-cvv" class="form-label">CVV</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cc-cvv"
+        placeholder="333"
+        formControlName="cvv"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          paymentInformationForm!.get('cvv')?.invalid &&
+          paymentInformationForm!.get('cvv')?.touched
+        "
+        >Please enter valid 3 digits CVV</span
+      >
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="paymentInformationForm.invalid"
+  >
+    Next
+  </button>
+</form>
+<article
+  class="payment-summary"
+  *ngIf="this.checkoutService.getPaymentInfoSubmitted()"
+>
+  <h6>
+    Card type:
+    <strong>{{
+      paymentInformationForm!.get("cardType")?.value | uppercase
+    }}</strong>
+  </h6>
+  <h6>
+    Name on Card:
+    <strong>{{ paymentInformationForm!.get("name")?.value }}</strong>
+  </h6>
+  <h6>
+    Card number:
+    <strong
+      >**** **** ****
+      {{
+        paymentInformationForm!.get("cardNumber")?.value?.toString() | slice: -4
+      }}</strong
+    >
+  </h6>
+</article>

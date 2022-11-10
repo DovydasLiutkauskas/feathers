@@ -38,6 +38,8 @@ import { CartProductComponent } from './shop/components/cart/cart-product/cart-p
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SearchResultsComponent } from './shop/components/search/search.component';
 import { CheckoutComponent } from './shop/components/checkout/checkout.component';
+import { ShippingFormComponent } from './shop/components/checkout/shipping-form/shipping-form.component';
+import { PaymentFormComponent } from './shop/components/checkout/payment-form/payment-form.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { CheckoutComponent } from './shop/components/checkout/checkout.component
     NotFoundComponent,
     SearchResultsComponent,
     CheckoutComponent,
+    ShippingFormComponent,
+    PaymentFormComponent,
   ],
   imports: [
     BrowserModule,

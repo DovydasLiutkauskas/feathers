@@ -1,0 +1,21 @@
+.delivery-summary {
+    padding: 1rem;
+  }
+  
+  .change-delivery-button {
+    color: lightskyblue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .btn {
+    width: fit-content;
+    background-color: black;
+    border: none;
+  }
+  
+  .btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }

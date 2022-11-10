@@ -1,0 +1,70 @@
+.checkout-main {
+  padding: 2rem;
+}
+
+form {
+  padding: 2rem;
+}
+
+.back-section {
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.arrow-back {
+  height: 2rem;
+  cursor: pointer;
+  position: relative;
+  animation-name: goBackArrow;
+  animation-direction: alternate-reverse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.back-section > p {
+  margin: 0;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+.error-message {
+  font-size: 10px;
+  color: red;
+}
+
+.section-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.section-info > p {
+  margin: 0;
+}
+
+.info-number {
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.active-info {
+  background-color: black;
+  color: white;
+}
+
+@keyframes goBackArrow {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -10px;
+  }
+}

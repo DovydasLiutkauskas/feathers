@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css']
+  styleUrls: ['./checkout.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent {
+  constructor(private location: Location) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  goBack(): void {
+    this.location.back();
   }
-
 }

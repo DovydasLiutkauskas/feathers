@@ -1,0 +1,235 @@
+<div class="section-info">
+  <span
+    class="info-number"
+    [ngClass]="{
+      'active-info': !this.checkoutService.getDeliveryInfoSubmitted()
+    }"
+    >1</span
+  >
+  <p>Delivery</p>
+  <p
+    class="change-delivery-button"
+    *ngIf="this.checkoutService.getDeliveryInfoSubmitted()"
+    (click)="this.checkoutService.changeInfoState('delivery')"
+  >
+    CHANGE
+  </p>
+</div>
+<form
+  class="row"
+  [formGroup]="shippingInfomationForm"
+  *ngIf="!this.checkoutService.getDeliveryInfoSubmitted()"
+  (ngSubmit)="this.checkoutService.submitSectionInfo('delivery')"
+>
+  <div class="form-group col-md-12 mb-3">
+    <label for="email" class="form-label">Email*</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="Josh@gmail.com"
+      formControlName="email"
+    />
+    <span
+      class="error-message"
+      *ngIf="
+        shippingInfomationForm!.get('email')?.invalid &&
+        shippingInfomationForm!.get('email')?.touched
+      "
+      >{{shippingInfomationForm!.get('email')?.errors?.['required'] ? 'This field is required' : 'Please enter valid email'}}</span
+    >
+  </div>
+  <div class="row mb-3">
+    <div class="form-group col-md-6">
+      <label for="firstName" class="form-label">First Name*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="Josh"
+        formControlName="firstName"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          shippingInfomationForm!.get('firstName')?.invalid &&
+          shippingInfomationForm!.get('firstName')?.touched
+        "
+        >This field is required</span
+      >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lastName" class="form-label">Last Name*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Peterson"
+        formControlName="lastName"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          shippingInfomationForm!.get('lastName')?.invalid &&
+          shippingInfomationForm!.get('lastName')?.touched
+        "
+        >This field is required</span
+      >
+    </div>
+  </div>
+  <div class="form-group mb-3">
+    <label for="inputAddress">Address*</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress"
+      placeholder="1234 Main St"
+      formControlName="address"
+    />
+    <span
+      class="error-message"
+      *ngIf="
+        shippingInfomationForm!.get('address')?.invalid &&
+        shippingInfomationForm!.get('address')?.touched
+      "
+      >This is required</span
+    >
+  </div>
+  <div class="form-group mb-3">
+    <label for="inputAddress2">Address 2 (optional)</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress2"
+      placeholder="Apartment, studio, or floor"
+      formControlName="address2"
+    />
+  </div>
+  <div class="row mb-3">
+    <div class="form-group col-md-6">
+      <label for="inputCountry">Country*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputCountry"
+        placeholder="Lithuania"
+        formControlName="country"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          shippingInfomationForm!.get('country')?.invalid &&
+          shippingInfomationForm!.get('country')?.touched
+        "
+        >This field is required</span
+      >
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputCity">City*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputCity"
+        placeholder="Kaunas"
+        formControlName="city"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          shippingInfomationForm!.get('city')?.invalid &&
+          shippingInfomationForm!.get('city')?.touched
+        "
+        >This field is required</span
+      >
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="form-group col-md-6">
+      <label for="inputState">State/Province*</label>
+      <input
+        id="inputState"
+        class="form-control"
+        type="text"
+        placeholder="Domeikava"
+        formControlName="state_province"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          shippingInfomationForm!.get('state_province')?.invalid &&
+          shippingInfomationForm!.get('state_province')?.touched
+        "
+        >This field is required</span
+      >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Zip*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputZip"
+        placeholder="55555"
+        formControlName="zipCode"
+      />
+      <span
+        class="error-message"
+        *ngIf="
+          shippingInfomationForm!.get('zipCode')?.invalid &&
+          shippingInfomationForm!.get('zipCode')?.touched
+        "
+        >{{shippingInfomationForm!.get('zipCode')?.errors?.['required'] ? 'This field is required' : 'Please enter 5 digit ZIP code'}}</span
+      >
+    </div>
+  </div>
+  <div class="form-group mb-3">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" />
+      <label class="form-check-label" for="gridCheck">
+        Subscribe to newsletter
+      </label>
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="shippingInfomationForm.invalid"
+  >
+    Next
+  </button>
+</form>
+<article
+  class="delivery-summary"
+  *ngIf="this.checkoutService.getDeliveryInfoSubmitted()"
+>
+  <h6>
+    Email: <strong>{{ shippingInfomationForm!.get("email")?.value }}</strong>
+  </h6>
+  <h6>
+    First Name:
+    <strong>{{ shippingInfomationForm!.get("firstName")?.value }}</strong>
+  </h6>
+  <h6>
+    Last Name:
+    <strong>{{ shippingInfomationForm!.get("lastName")?.value }}</strong>
+  </h6>
+  <h6>
+    Address:
+    <strong>{{ shippingInfomationForm!.get("address")?.value }}</strong>
+  </h6>
+  <h6>
+    Country:
+    <strong>{{ shippingInfomationForm!.get("country")?.value }}</strong>
+  </h6>
+  <h6>
+    City: <strong>{{ shippingInfomationForm!.get("city")?.value }}</strong>
+  </h6>
+  <h6>
+    State/Province:
+    <strong>{{ shippingInfomationForm!.get("state_province")?.value }}</strong>
+  </h6>
+  <h6>
+    Zip: <strong>{{ shippingInfomationForm!.get("zipCode")?.value }}</strong>
+  </h6>
+</article>

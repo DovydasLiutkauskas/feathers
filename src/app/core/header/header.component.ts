@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
 
   private keyUp = new Subject<string>();
 
-  constructor(private router: Router, private cartService: CartService) {}
+  constructor(public router: Router, private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartQuantity$ = this.cartService.updatedQuantity$;
