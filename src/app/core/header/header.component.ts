@@ -79,8 +79,9 @@ export class HeaderComponent implements OnInit {
     this.navbarMenu?.nativeElement.classList.remove('show');
   }
 
-  showSearchInput(input: HTMLInputElement) {
+  showSearchInput(input: HTMLInputElement, mainDiv: HTMLDivElement) {
     input.classList.add('show-search-input');
+    mainDiv.classList.add('move-top');
     input.focus();
     (function inputTimer() {
       setTimeout(() => {
@@ -88,6 +89,7 @@ export class HeaderComponent implements OnInit {
           inputTimer();
         } else {
           input.classList.remove('show-search-input');
+          mainDiv.classList.remove('move-top');
         }
       }, 5000);
     })();

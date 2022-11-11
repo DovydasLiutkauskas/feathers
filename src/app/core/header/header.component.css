@@ -45,7 +45,6 @@ nav {
 .glass {
   display: flex;
   align-items: center;
-  margin-right: 25px;
   cursor: pointer;
 }
 
@@ -88,18 +87,14 @@ nav {
 }
 
 .show-search-input {
-  max-width: 150px;
+  max-width: 120px;
+  margin-right: 6px;
   opacity: 1;
 }
 
-@media only screen and (max-width: 1530px) {
-  .right-nav {
-    flex-direction: column-reverse;
-    margin-top: 30px;
-  }
-
-  .glass {
-    align-self: flex-start;
+@media only screen and (max-width: 1420px) {
+  .move-top {
+    margin-top: 80px;
   }
 }
 
@@ -131,6 +126,10 @@ nav {
 
   .glass {
     align-self: center;
+  }
+
+  .move-top {
+    margin-top: 0;
   }
 }
 
