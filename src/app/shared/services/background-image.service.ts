@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class BackgroundImageService {
-  backgroundImgPaths: { [key: string]: string } = {
+  private backgroundImgPaths: { [key: string]: string } = {
     'about-us': '/assets/images/backgrounds/autumn-background.jpg',
     'summer-sale': '/assets/images/backgrounds/palm-tree.jpg',
     contact: '/assets/images/backgrounds/contact-background.jpg',
@@ -22,9 +22,7 @@ export class BackgroundImageService {
 
   backgroundImage$ = new BehaviorSubject('');
 
-  constructor() {}
-
-  changeBackgroundImage(name: string) {
+  changeBackgroundImage(name: string): void {
     const getBackground = this.backgroundImgPaths[name];
     this.backgroundImage$.next(
       getBackground || this.backgroundImgPaths['default']

@@ -1,6 +1,4 @@
-<section
-  class="header page-width-l"
-  [style.background-image]="'url(' + currentPathBackground + ')'"
->
+<section class="header page-width-l">
+  <img [src]="currentPathBackground" class="img-test" />
   <h1 class="title">{{ router.url | pageName }}</h1>
 </section>

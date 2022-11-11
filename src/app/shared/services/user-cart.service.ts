@@ -42,7 +42,8 @@ export class CartService {
   }
 
   deleteAllItemsInCart() {
-    localStorage.removeItem('cart');
+    this.itemsInCart = [];
+    this.updateCartData();
   }
 
   getItemsInCart(): CartItem[] {

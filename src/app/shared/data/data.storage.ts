@@ -107,8 +107,8 @@ const pillowitemList = [
     price: 49,
     images: [
       '/assets/images/collections/pillows/pillow-1.png',
-      '/assets/images/collections/pillows/additonal-pillow-1.jpg',
-      '/assets/images/collections/pillows/additonal-pillow-2.jpg',
+      '/assets/images/collections/pillows/additional-pillow-1.jpg',
+      '/assets/images/collections/pillows/additional-pillow-2.jpg',
     ],
     category: 'pillows',
     id: idCounter++,
@@ -129,8 +129,8 @@ const pillowitemList = [
     price: 99,
     images: [
       '/assets/images/collections/pillows/pillow-3.png',
-      '/assets/images/collections/pillows/additonal-pillow-1.jpg',
-      '/assets/images/collections/pillows/additonal-pillow-2.jpg',
+      '/assets/images/collections/pillows/additional-pillow-1.jpg',
+      '/assets/images/collections/pillows/additional-pillow-2.jpg',
     ],
     category: 'pillows',
     id: idCounter++,
@@ -140,7 +140,7 @@ const pillowitemList = [
     price: 29,
     images: [
       '/assets/images/collections/pillows/pillow-4.png',
-      '/assets/images/collections/pillows/additonal-pillow-2.jpg',
+      '/assets/images/collections/pillows/additional-pillow-2.jpg',
     ],
     category: 'pillows',
     id: idCounter++,

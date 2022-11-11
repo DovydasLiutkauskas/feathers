@@ -9,10 +9,9 @@ import { BackgroundImageService } from '../../services/background-image.service'
   styleUrls: ['./page-header.component.css'],
 })
 export class PageHeaderComponent implements OnInit, OnDestroy {
-  currentPathBackground$$: Subscription | undefined;
+  private currentPathBackground$$: Subscription | undefined;
 
   currentPathBackground: string = '/assets/images/palm-tree.jpg';
-  currentUrlPath: string = '';
 
   constructor(
     public router: Router,
@@ -26,7 +25,7 @@ export class PageHeaderComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.currentPathBackground$$?.unsubscribe();
   }
 }

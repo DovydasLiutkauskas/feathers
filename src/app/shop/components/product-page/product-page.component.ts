@@ -39,9 +39,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
         params['category'],
         params['id']
       );
+      this.selectedImage = this.currentItem.images[0];
     });
-
-    this.selectedImage = this.currentItem.images[0];
   }
 
   goBack() {
