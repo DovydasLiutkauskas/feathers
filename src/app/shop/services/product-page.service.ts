@@ -7,11 +7,9 @@ import { collections } from 'src/app/shared/data/data.storage';
   providedIn: 'root',
 })
 export class ProductPageService {
-  showModal$ = new BehaviorSubject(false);
+  public showModal$ = new BehaviorSubject(false);
 
-  relatedItems$ = new BehaviorSubject<CollectionItem[]>([]);
-
-  constructor() {}
+  public relatedItems$ = new BehaviorSubject<CollectionItem[]>([]);
 
   getItem(category: string, name: string): CollectionItem {
     this.updateRelatedItems(category, name);
@@ -20,18 +18,18 @@ export class ProductPageService {
     )!;
   }
 
-  updateRelatedItems(categoryName: string, itemName: string) {
+  updateRelatedItems(categoryName: string, itemName: string): void {
     const relatedItems = collections[categoryName].items.filter(
       (item: CollectionItem) => item.name !== itemName
     );
     this.relatedItems$.next(relatedItems);
   }
 
-  openModal() {
+  openModal(): void {
     this.showModal$.next(true);
   }
 
-  closeModal() {
+  closeModal(): void {
     this.showModal$.next(false);
   }
 }

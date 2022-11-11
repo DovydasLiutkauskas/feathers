@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { min } from 'rxjs';
 import { CollectionItem } from 'src/app/shared/data/data.model';
 import { collections } from '../../../shared/data/data.storage';
 
@@ -7,15 +6,15 @@ import { collections } from '../../../shared/data/data.storage';
   providedIn: 'root',
 })
 export class RandomProductsService {
-  productPerPage = 3;
-  randomProducts: CollectionItem[] = [];
-  collectionNames: string[];
+  private productPerPage = 3;
+  private randomProducts: CollectionItem[] = [];
+  private collectionNames: string[];
 
   constructor() {
     this.collectionNames = Object.keys(collections);
   }
 
-  getRandomItems() {
+  getRandomItems(): CollectionItem[] {
     this.randomProducts = [];
     for (let i = 0; i < this.productPerPage; i++) {
       const randomCategoryNum = this.randomNumberGenerator(
@@ -34,7 +33,7 @@ export class RandomProductsService {
         this.randomProducts.push(randomProduct);
       }
     }
-    return this.randomProducts;
+    return this.randomProducts.slice();
   }
 
   randomNumberGenerator(max: number, min: number): number {

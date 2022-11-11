@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -7,10 +7,10 @@ import { Subscription } from 'rxjs';
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.css'],
 })
-export class BreadcrumbsComponent implements OnInit, OnDestroy {
-  currentRoute$$!: Subscription;
+export class BreadcrumbsComponent implements OnDestroy {
+  private currentRoute$$!: Subscription;
 
-  currentRoute!: string[];
+  public currentRoute!: string[];
 
   constructor(private router: Router) {
     this.currentRoute$$ = this.router.events.subscribe((event: Event) => {
@@ -25,9 +25,7 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit(): void {}
-
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.currentRoute$$.unsubscribe();
   }
 }

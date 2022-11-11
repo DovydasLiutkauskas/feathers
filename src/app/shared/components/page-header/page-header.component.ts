@@ -11,7 +11,7 @@ import { BackgroundImageService } from '../../services/background-image.service'
 export class PageHeaderComponent implements OnInit, OnDestroy {
   private currentPathBackground$$: Subscription | undefined;
 
-  currentPathBackground: string = '/assets/images/palm-tree.jpg';
+  public currentPathBackground: string = '/assets/images/palm-tree.jpg';
 
   constructor(
     public router: Router,

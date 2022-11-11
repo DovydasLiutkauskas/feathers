@@ -11,11 +11,11 @@ import { CheckoutService } from './checkout.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class CheckoutComponent {
-  orderSubmitted: boolean = false;
+  public orderSubmitted: boolean = false;
 
-  secondsLeft = 5;
+  public secondsLeft = 5;
 
-  interval: any;
+  private interval: any;
 
   constructor(
     private location: Location,
@@ -42,7 +42,7 @@ export class CheckoutComponent {
     this.cartService.deleteAllItemsInCart();
   }
 
-  countdown() {
+  countdown(): void {
     this.secondsLeft--;
     if (this.secondsLeft === 0) {
       this.router.navigate(['/home']);

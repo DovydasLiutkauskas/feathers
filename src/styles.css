@@ -78,10 +78,20 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
-@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import '~@fortawesome/fontawesome-free/scss/solid.scss';
-@import '~@fortawesome/fontawesome-free/scss/regular.scss';
-@import '~@fortawesome/fontawesome-free/scss/brands.scss';
- 
-@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+/* STYLES FOR FORM ERRROS!*/
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";

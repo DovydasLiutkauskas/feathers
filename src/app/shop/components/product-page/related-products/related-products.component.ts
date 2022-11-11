@@ -9,7 +9,7 @@ import { ProductPageService } from '../../../services/product-page.service';
   styleUrls: ['./related-products.component.css'],
 })
 export class RelatedProductsComponent implements OnInit {
-  relatedProducts$!: Observable<CollectionItem[]>;
+  public relatedProducts$!: Observable<CollectionItem[]>;
 
   constructor(private productService: ProductPageService) {}
 

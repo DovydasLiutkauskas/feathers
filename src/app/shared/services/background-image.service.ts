@@ -20,7 +20,7 @@ export class BackgroundImageService {
     default: '/assets/images/backgrounds/collections-header.png',
   };
 
-  backgroundImage$ = new BehaviorSubject('');
+  public backgroundImage$ = new BehaviorSubject('');
 
   changeBackgroundImage(name: string): void {
     const getBackground = this.backgroundImgPaths[name];

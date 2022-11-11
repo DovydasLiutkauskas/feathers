@@ -56,7 +56,7 @@ export class CartPopupComponent implements OnInit, OnDestroy {
     this.totalItemsPrice$ = this.cartService.totalCartSum$;
   }
 
-  onItemDelete(id: number) {
+  onItemDelete(id: number): void {
     this.cartService.deleteItemInCart(id);
   }
 

@@ -8,7 +8,7 @@ import { CheckoutService } from '../checkout.service';
   styleUrls: ['./payment-form.component.css'],
 })
 export class PaymentFormComponent {
-  paymentInformationForm!: FormGroup;
+  public paymentInformationForm!: FormGroup;
 
   constructor(public checkoutService: CheckoutService) {
     this.paymentInformationForm = new FormGroup({

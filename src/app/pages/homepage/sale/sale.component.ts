@@ -8,7 +8,7 @@ import { CategoryDataService } from 'src/app/shop/services/category-data.service
   styleUrls: ['./sale.component.css'],
 })
 export class HomepageSaleComponent implements OnInit {
-  promoItemList: CollectionItem[] = [];
+  public promoItemList: CollectionItem[] = [];
 
   constructor(private categoryService: CategoryDataService) {}
 

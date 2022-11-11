@@ -13,9 +13,9 @@ import { CategoryDataService } from '../../services/category-data.service';
 export class SearchResultsComponent implements OnInit, OnDestroy {
   private searchItemResults$$!: Subscription;
 
-  searchResults: CollectionItem[] | undefined | null;
+  public searchResults: CollectionItem[] | undefined | null;
 
-  query: string = '';
+  public query: string = '';
 
   constructor(
     private backgroundImageService: BackgroundImageService,

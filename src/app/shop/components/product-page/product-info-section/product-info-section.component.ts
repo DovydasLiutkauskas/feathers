@@ -8,11 +8,11 @@ import { CollectionItem } from 'src/app/shared/data/data.model';
 })
 export class ProductInfoSectionComponent {
   @Input() product: CollectionItem | undefined;
-  currentSection = 'DESCRIPTION';
-  defaultText =
+  public currentSection = 'DESCRIPTION';
+  public defaultText =
     'No data, please contact us for more information regards this product.';
 
-  onClick(event: any) {
+  onClick(event: any): void {
     this.currentSection = event.currentTarget.textContent.trim();
   }
 }

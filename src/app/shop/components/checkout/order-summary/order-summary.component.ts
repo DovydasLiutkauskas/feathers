@@ -9,8 +9,8 @@ import { CheckoutService } from '../checkout.service';
   styleUrls: ['./order-summary.component.css'],
 })
 export class OrderSummaryComponent implements OnInit, OnDestroy {
-  totalCartPrice$$: Subscription | undefined;
-  totalCartPrice: number | undefined;
+  private totalCartPrice$$: Subscription | undefined;
+  public totalCartPrice: number | undefined;
 
   constructor(
     public checkoutService: CheckoutService,

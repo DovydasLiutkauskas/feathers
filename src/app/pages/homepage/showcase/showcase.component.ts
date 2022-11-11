@@ -8,7 +8,7 @@ import { RandomProductsService } from '../services/random-products.service';
   styleUrls: ['./showcase.component.css'],
 })
 export class HomepageShowcaseComponent implements OnInit {
-  randomItems!: CollectionItem[];
+  public randomItems!: CollectionItem[];
 
   constructor(private randomProducts: RandomProductsService) {}
 

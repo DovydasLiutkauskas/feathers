@@ -6,13 +6,11 @@ import { collections } from 'src/app/shared/data/data.storage';
   providedIn: 'root',
 })
 export class CategoryDataService {
-  constructor() {}
-
-  getCategoryData(category: string) {
-    return collections[category].items.slice();
+  getCategoryData(category: string): CollectionItem[] {
+    return [...collections[category].items];
   }
 
-  getPromoProducts() {
+  getPromoProducts(): CollectionItem[] {
     const promoProducts = [];
     for (const key in collections) {
       const currentPromoProducts = collections[key].items.filter(

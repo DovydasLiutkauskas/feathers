@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CartItem } from 'src/app/shared/data/data.model';
@@ -12,15 +11,14 @@ import { ProductPageService } from '../../services/product-page.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit, OnDestroy {
-  currentCartItems!: CartItem[];
-  updateItemsInCart$$!: Subscription;
-  productPriceTotal$!: Observable<number>;
-  deliveryPrice = 30;
+  public currentCartItems!: CartItem[];
+  private updateItemsInCart$$!: Subscription;
+  public productPriceTotal$!: Observable<number>;
+  public deliveryPrice = 30;
 
   constructor(
     private productService: ProductPageService,
     private cartService: CartService,
-    private location: Location,
     private backgroundService: BackgroundImageService
   ) {}
 
@@ -45,22 +43,22 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   }
 
-  onInputFocus(button: HTMLButtonElement) {
+  onInputFocus(button: HTMLButtonElement): void {
     button.classList.remove('hide-search-button');
   }
 
-  onInputBlur(button: HTMLButtonElement, input: HTMLInputElement) {
+  onInputBlur(button: HTMLButtonElement, input: HTMLInputElement): void {
     if (!input.value) {
       button.classList.add('hide-search-button');
       input.classList.remove('discount-error');
     }
   }
 
-  onDiscountButtonClick(input: HTMLInputElement) {
+  onDiscountButtonClick(input: HTMLInputElement): void {
     input.classList.add('discount-error');
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.updateItemsInCart$$.unsubscribe();
   }
 }

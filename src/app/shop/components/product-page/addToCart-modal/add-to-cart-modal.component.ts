@@ -13,7 +13,7 @@ export class AddToCartModalComponent implements OnInit, OnDestroy {
   @Input() currentItem!: CollectionItem;
   @Input() quantity: number = 1;
 
-  cartQuantity$!: Observable<number | null>;
+  public cartQuantity$!: Observable<number | null>;
 
   constructor(
     private productService: ProductPageService,
@@ -31,11 +31,11 @@ export class AddToCartModalComponent implements OnInit, OnDestroy {
     if (e.key === 'Escape') this.closeModal();
   }
 
-  closeModal() {
+  closeModal(): void {
     this.productService.closeModal();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     window.removeAllListeners;
     window.removeEventListener('keydown', this.checkPressedKey);
   }

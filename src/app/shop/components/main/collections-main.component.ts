@@ -8,7 +8,7 @@ import { collections } from '../../../shared/data/data.storage';
   styleUrls: ['./collections-main.component.css'],
 })
 export class CollectionsMainComponent implements OnInit {
-  colletionList = collections;
+  public colletionList = collections;
 
   constructor(private backgroundService: BackgroundImageService) {}
 

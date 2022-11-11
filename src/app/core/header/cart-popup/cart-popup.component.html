@@ -39,15 +39,17 @@
     <div class="cart-down">
       <div class="down-block">
         <p class="down-name">Price</p>
-        <p class="down-price">${{ totalItemsPrice$ | async }}</p>
+        <p class="down-price">{{ totalItemsPrice$ | async | currency }}</p>
       </div>
       <div class="down-block">
         <p class="down-name">Delivery</p>
-        <p class="down-price">$30</p>
+        <p class="down-price">{{ 30 | currency }}</p>
       </div>
       <div class="down-block">
         <p class="down-name">Total</p>
-        <p class="down-price">${{ (totalItemsPrice$ | async)! + 30 }}</p>
+        <p class="down-price">
+          {{ (totalItemsPrice$ | async)! + 30 | currency }}
+        </p>
       </div>
     </div>
     <div class="btn-container">

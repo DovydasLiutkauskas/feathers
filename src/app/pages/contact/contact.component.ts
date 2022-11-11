@@ -9,12 +9,12 @@ import { BackgroundImageService } from 'src/app/shared/services/background-image
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit, OnDestroy {
-  contactUsForm!: FormGroup;
-  subjectCount: number = 0;
-  messageCount: number = 0;
-  formSubmited: boolean = false;
-  secondsLeft = 5;
-  interval!: any;
+  public contactUsForm!: FormGroup;
+  public subjectCount: number = 0;
+  public messageCount: number = 0;
+  public formSubmited: boolean = false;
+  public secondsLeft = 5;
+  private interval!: any;
   constructor(
     private backgroundService: BackgroundImageService,
     private router: Router
@@ -37,27 +37,27 @@ export class ContactComponent implements OnInit, OnDestroy {
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.formSubmited = true;
     this.interval = setInterval(() => this.countdown(), 1000);
   }
 
-  countdown() {
+  countdown(): void {
     this.secondsLeft--;
     if (this.secondsLeft === 0) {
       this.router.navigate(['/home']);
     }
   }
 
-  updateSubjectCount(event: any) {
+  updateSubjectCount(event: any): void {
     this.subjectCount = event.target?.value?.length;
   }
 
-  updateMessageCount(event: any) {
+  updateMessageCount(event: any): void {
     this.messageCount = event.target.value.length;
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     clearInterval(this.interval);
   }
 }

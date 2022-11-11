@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CartItem } from 'src/app/shared/data/data.model';
 import { CartService } from 'src/app/shared/services/user-cart.service';
 
@@ -7,17 +7,15 @@ import { CartService } from 'src/app/shared/services/user-cart.service';
   templateUrl: './cart-product.component.html',
   styleUrls: ['./cart-product.component.css'],
 })
-export class CartProductComponent implements OnInit {
+export class CartProductComponent {
   @Input() cartItem!: CartItem;
-  numbers: number[];
+  public numbers: number[];
 
   constructor(private cartService: CartService) {
     this.numbers = new Array(20).fill(0).map((_, i) => i + 1);
   }
 
-  ngOnInit(): void {}
-
-  deleteItem(id: number) {
+  deleteItem(id: number): void {
     this.cartService.deleteItemInCart(id);
   }
 

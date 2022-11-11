@@ -9,7 +9,7 @@ import { CategoryDataService } from 'src/app/shop/services/category-data.service
   styleUrls: ['./summer-sale.component.css'],
 })
 export class SummerSaleComponent implements OnInit {
-  saleProducts: CollectionItem[] = [];
+  public saleProducts: CollectionItem[] = [];
 
   constructor(
     private categoryService: CategoryDataService,

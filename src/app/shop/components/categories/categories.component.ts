@@ -11,9 +11,9 @@ import { CategoryDataService } from '../../services/category-data.service';
   styleUrls: ['./categories.component.css'],
 })
 export class CollectionsCategoriesComponent implements OnInit, OnDestroy {
-  currentCategoryItems!: CollectionItem[];
+  public currentCategoryItems!: CollectionItem[];
 
-  currentCategoryPath$$!: Subscription;
+  private currentCategoryPath$$!: Subscription;
 
   constructor(
     private route: ActivatedRoute,

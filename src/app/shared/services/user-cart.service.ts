@@ -8,9 +8,9 @@ import { CartItem, CollectionItem } from '../data/data.model';
 export class CartService {
   private itemsInCart: CartItem[] = [];
 
-  updatedQuantity$ = new BehaviorSubject(this.getTotalQuantity());
+  public updatedQuantity$ = new BehaviorSubject(this.getTotalQuantity());
 
-  updatedItemsInCart$ = new Subject<CartItem[]>();
+  public updatedItemsInCart$ = new Subject<CartItem[]>();
 
   public totalCartSum$ = new BehaviorSubject<number>(0);
 
@@ -20,7 +20,7 @@ export class CartService {
     }
   }
 
-  addItemToCart(item: CollectionItem, qty: number) {
+  addItemToCart(item: CollectionItem, qty: number): void {
     const itemExist = this.itemsInCart.findIndex(
       (cartItem: CartItem) => cartItem.item.id === item.id
     );
@@ -33,7 +33,7 @@ export class CartService {
     this.updateCartData();
   }
 
-  deleteItemInCart(id: number) {
+  deleteItemInCart(id: number): void {
     this.itemsInCart = this.itemsInCart.filter(
       (cartItem: CartItem) => cartItem.item.id !== id
     );
@@ -41,14 +41,14 @@ export class CartService {
     this.updateCartData();
   }
 
-  deleteAllItemsInCart() {
+  deleteAllItemsInCart(): void {
     this.itemsInCart = [];
     this.updateCartData();
   }
 
   getItemsInCart(): CartItem[] {
     this.getTotalCartPrice();
-    return this.itemsInCart.slice();
+    return [...this.itemsInCart];
   }
 
   private getTotalQuantity(): number | null {

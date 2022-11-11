@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./arrow.component.css'],
 })
 export class ArrowComponent implements OnInit {
-  windowScrolled = false;
-
-  constructor() {}
+  public windowScrolled = false;
 
   ngOnInit(): void {
     window.addEventListener('scroll', () => {

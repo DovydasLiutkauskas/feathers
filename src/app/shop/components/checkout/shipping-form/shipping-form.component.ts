@@ -5,12 +5,12 @@ import { CheckoutService } from '../checkout.service';
 @Component({
   selector: 'app-shipping-form',
   templateUrl: './shipping-form.component.html',
-  styleUrls: ['./shipping-form.component.css']
+  styleUrls: ['./shipping-form.component.css'],
 })
-export class ShippingFormComponent  {
-  shippingInfomationForm!: FormGroup;
+export class ShippingFormComponent {
+  public shippingInfomationForm!: FormGroup;
 
-  constructor(public checkoutService: CheckoutService) { 
+  constructor(public checkoutService: CheckoutService) {
     this.shippingInfomationForm = new FormGroup({
       firstName: new FormControl(null, Validators.required),
       lastName: new FormControl(null, Validators.required),
@@ -27,5 +27,4 @@ export class ShippingFormComponent  {
       ]),
     });
   }
-
 }

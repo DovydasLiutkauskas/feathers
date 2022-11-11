@@ -17,11 +17,11 @@ import { CartService } from 'src/app/shared/services/user-cart.service';
 export class HeaderComponent implements OnInit {
   @ViewChild('navbarMenu') navbarMenu: ElementRef | undefined;
 
-  cartState = 'hidden';
-
   @ViewChild('dropdown') dropdownEl!: ElementRef;
 
-  cartQuantity$!: Observable<number | null>;
+  public cartState = 'hidden';
+
+  public cartQuantity$!: Observable<number | null>;
 
   private keyUp = new Subject<string>();
 
@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
     this.keyUp.next(value);
   }
 
-  shopDropdown(element: HTMLAnchorElement) {
+  shopDropdown(element: HTMLAnchorElement): void {
     if (element.nextElementSibling?.classList.contains('show')) {
       this.router.navigate(['collections']);
       element.nextElementSibling?.classList.remove('show');
@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit {
     this.dropdownEl.nativeElement.nextElementSibling.classList.remove('show');
   }
 
-  onNavToggleClick() {
+  onNavToggleClick(): void {
     this.navbarMenu?.nativeElement.classList.add('show');
   }
 
@@ -79,7 +79,7 @@ export class HeaderComponent implements OnInit {
     this.navbarMenu?.nativeElement.classList.remove('show');
   }
 
-  showSearchInput(input: HTMLInputElement, mainDiv: HTMLDivElement) {
+  showSearchInput(input: HTMLInputElement, mainDiv: HTMLDivElement): void {
     input.classList.add('show-search-input');
     mainDiv.classList.add('move-top');
     input.focus();
